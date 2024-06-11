@@ -1,5 +1,7 @@
 {
   "name": "beaconofchange",
+  "author": "Bidisha Mondal",
+  "repository": "https://github.com/mondalbidisha/BeaconOfChange",
   "version": "0.1.0",
   "private": true,
   "scripts": {
