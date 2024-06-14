@@ -2,32 +2,204 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* https://css-tricks.com/custom-scrollbars-in-webkit/ */
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --shiki-color-text: theme('colors.white');
+    --shiki-token-constant: theme('colors.green.400');
+    --shiki-token-string: theme('colors.green.400');
+    --shiki-token-comment: theme('colors.zinc.500');
+    --shiki-token-keyword: theme('colors.sky.300');
+    --shiki-token-parameter: theme('colors.pink.300');
+    --shiki-token-function: theme('colors.violet.300');
+    --shiki-token-string-expression: theme('colors.green.400');
+    --shiki-token-punctuation: theme('colors.zinc.200');
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::-webkit-scrollbar {
+  width: 14px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292d45;
+  height: 80%;
+  padding-top: 10px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #3d4363;
+} 
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.content:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.folder-container {
+  position: relative;
+}
+
+.content:hover .line-before-folder {
+  height: calc(100% - 28px);
+  position: absolute;
+  border-left: 1px solid #31374e;
+  top: 28px;
+  user-select: none;
+}
+
+.folder-active .line-before-folder {
+  height: calc(100% - 28px);
+  position: absolute;
+  border-left: 1.5px solid #31374e;
+  top: 28px;
+  user-select: none;
+}
+
+.top-arrows,
+.bottom-arrows {
+  content: '';
+  position: absolute;
+  z-index: 30;
+}
+
+.top-arrows.left-arrow {
+  top: -2px;
+  left: -2px;
+}
+
+.top-arrows.right-arrow {
+  top: -2px;
+  right: -2px;
+}
+
+.bottom-arrows.left-arrow {
+  bottom: -2px;
+  left: -2px;
+}
+
+.bottom-arrows.right-arrow {
+  bottom: -2px;
+  right: -2px;
+}
+
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
   }
 }
+
+.button-hover-shadow:hover {
+  box-shadow:
+    0 4px 7px rgba(0, 0, 0, 0.15),
+    0 100px 80px rgba(255, 255, 255, 0.02),
+    0 42px 33px rgba(255, 255, 255, 0.024),
+    0 22px 18px rgba(255, 255, 255, 0.028),
+    0 12px 10px rgba(255, 255, 255, 0.034),
+    0 7px 5px rgba(255, 255, 255, 0.04),
+    0 3px 2px rgba(255, 255, 255, 0.07);
+}
+
+.glow-card-transition-duration {
+  transition-duration: 600ms;
+}
+
+.glow-card-transition-duration:hover {
+  transition-duration: 70ms;
+}
+
+.icon-blur {
+  filter: blur(18px);
+}
+
+.scroll-down {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.scroll-down span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: scroll-down 1.5s infinite;
+}
+
+.scroll-down span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.scroll-down span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-15px, -15px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(15px, 15px);
+  }
+}
+
+@keyframes hue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.app-gradient-bg {
+  background-color: #3649aa;
+  background-image: linear-gradient(315deg, #3649aa 0%, #2bd2ff 52%, #2b60ff 90%);
+}
+
