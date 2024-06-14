@@ -7,7 +7,7 @@ export const geminiGenerate = async (message: string): Promise<string | null> =>
   const model = new ChatGoogleGenerativeAI({
     modelName: "gemini-pro",
     maxOutputTokens: 2048,
-    apiKey: "AIzaSyCMjGZC37WP_gWMG8Y30RRdAvDeDSh1xzk",
+    apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   });
 
   const promptTemplate = PromptTemplate.fromTemplate(
