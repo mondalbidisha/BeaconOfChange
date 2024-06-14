@@ -15,7 +15,7 @@ export const stabilityGenerate = async (): Promise<any | null> => {
 				validateStatus: undefined,
 				responseType: "arraybuffer",
 				headers: { 
-					Authorization: `Bearer sk-jSdKKDFdcxFITZTmyEoSAZMhX7BnWLlhqiXxQzx5x7wdSsDH`, 
+					Authorization: `Bearer ${process.env.NEXT_PUBLIC_STABILITY_API_KEY}`, 
 					Accept: "image/*" 
 				},
 			},
