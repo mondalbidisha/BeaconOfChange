@@ -151,7 +151,7 @@
 
 .scroll-down {
   position: absolute;
-  top: 80%;
+  top: 88%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

@@ -63,6 +63,11 @@ export default function SliderContainer() {
               />
             </div>
           </div>
+          <div className="t-10 scroll-down">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </AnimatePresence>
     </div>
