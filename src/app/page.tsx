@@ -14,6 +14,7 @@ import RiseLoader from "react-spinners/RiseLoader";
 import { Data } from "@/constants/types";
 import ParentLayout from "@/components/ClimateFactsContainer/ParentLayout";
 import { slideDataPrompt } from "@/constants/promptTemplates";
+import NewsLayout from "@/components/ClimateNewsContainer/NewsLayout";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -29,11 +30,12 @@ export default function Home() {
     }
 
     useEffect(() => {
-      parseGeminiResponse()
-      if (slideData.length > 0) {
+      if (slideData.length == 5) {
         setTimeout(() => {
           setIsLoading(false)
         }, 2000)
+      } else {
+        parseGeminiResponse()
       }
     }, [])
     
@@ -83,6 +85,7 @@ export default function Home() {
         <>
           <SliderContainer />
           <ParentLayout />
+          <NewsLayout />
         </> } 
     </main>
   );
