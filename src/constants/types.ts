@@ -2,8 +2,7 @@ export type Data = {
 	img: string;
 	title: string;
 	fallback: string;
-	description?: string;
-	location?: string;
+	description?: string | null;
 };
   
 export type CurrentSlideData = {

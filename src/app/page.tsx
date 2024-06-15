@@ -12,13 +12,15 @@ import SliderContainer from "@/components/SlidingCarousel/SliderContainer";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import { sliderData } from "@/constants/sliderData";
 import RiseLoader from "react-spinners/RiseLoader";
+import { Data } from "@/constants/types";
+import ParentLayout from "@/components/ClimateFactsContainer/ParentLayout";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     let slideData: any = []
 
     const parseGeminiResponse = () => {
-      slideData = sliderData.map((element: any) => {
+      slideData = sliderData.map((element: Data) => {
         const message = `generate 3-4 sentences relevant to ${element.title}, include one similar incident from around the world. Perform web search to fetch latest and most accurate the data.`
         geminiGenerate(message).then((response) => {
           element.description = response
@@ -68,7 +70,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen scroll-smooth">
+    <main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
       {isLoading ?
         <RiseLoader
           color={"#36d7b7"}
@@ -77,7 +79,11 @@ export default function Home() {
           size={100}
           aria-label="Loading Spinner"
           data-testid="loader"
-        /> : <SliderContainer />} 
+        /> :
+        <>
+          <SliderContainer />
+          <ParentLayout />
+        </> } 
     </main>
   );
 }

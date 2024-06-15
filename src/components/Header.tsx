@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import { IoIosGlobe, IoMdSearch, IoMdPerson } from "react-icons/io";
 import { FaEarthAmericas } from "react-icons/fa6";
 
 function Header() {

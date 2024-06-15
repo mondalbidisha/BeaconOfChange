@@ -1,4 +1,6 @@
-export const sliderData:any = [
+import { Data } from "./types";
+
+export const sliderData:Data[] = [
     {
       img: "/climate-change-imp.jpeg",
       fallback: "Climate change is leading to rising global temperatures, resulting in more frequent and severe heatwaves that threaten human health and productivity. Extreme weather events like hurricanes, floods, and wildfires are becoming more common, causing widespread destruction and displacement. Recent news reports highlighted how devastating floods in Pakistan displaced millions of people and disrupted lives, showcasing the immediate human toll of climate change.",
