@@ -22,27 +22,27 @@
   width: 14px;
 } */
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: none;
-}
+} */
 
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb { */
   /* background: #292d45; */
-  height: 80%;
+  /* height: 80%;
   padding-top: 10px;
-}
+} */
 
 /* ::-webkit-scrollbar-thumb:active {
   /* background: #3d4363; */
 /* }   */
 
-.content::-webkit-scrollbar {
+/* .content::-webkit-scrollbar {
   display: none;
 }
 
 .content:hover::-webkit-scrollbar {
   display: block;
-}
+} */
 
 .folder-container {
   position: relative;

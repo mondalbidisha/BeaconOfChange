@@ -1,5 +1,4 @@
 "use client";
-
 // import MapIframe from "@/components/MapIframe";
 // import { FadeIn } from "@/components/FadeIn";
 // import GridPattern from "@/components/GridPattern";
@@ -14,6 +13,7 @@ import { sliderData } from "@/constants/sliderData";
 import RiseLoader from "react-spinners/RiseLoader";
 import { Data } from "@/constants/types";
 import ParentLayout from "@/components/ClimateFactsContainer/ParentLayout";
+import { slideDataPrompt } from "@/constants/promptTemplates";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +22,7 @@ export default function Home() {
     const parseGeminiResponse = () => {
       slideData = sliderData.map((element: Data) => {
         const message = `generate 3-4 sentences relevant to ${element.title}, include one similar incident from around the world. Perform web search to fetch latest and most accurate the data.`
-        geminiGenerate(message).then((response) => {
+        geminiGenerate(message, slideDataPrompt).then((response) => {
           element.description = response
         })
       });
