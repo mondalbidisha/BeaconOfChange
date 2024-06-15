@@ -1,9 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { FaEarthAmericas } from "react-icons/fa6";
 
 function Header() {
-  const [active, setActive] = React.useState(0);
+  // const [active, setActive] = React.useState(0);
 
   return (
     <div className="absolute mt-5 flex w-full flex-wrap items-center justify-between gap-2 px-5 text-xs font-medium uppercase opacity-90 md:px-10">
@@ -11,7 +11,7 @@ function Header() {
         <FaEarthAmericas className="text-4xl" />
         Beacon of Change
       </div>
-      <ul className=" flex flex-wrap items-center gap-3 text-[11px] md:gap-10">
+      <ul className="flex flex-wrap items-center gap-3 text-[11px] md:gap-10">
         {/* {menus.map((menu, index) => {
           return (
             <motion.li
