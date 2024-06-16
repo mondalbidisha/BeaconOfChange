@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/magicui/animated-list";
+import { BorderBeam } from "../magicui/border-beam";
 
 interface Item {
   title: string;
@@ -34,6 +35,7 @@ const Notification = ({ title, details, source }: Item) => {
 					</p>
         </div>
       </div>
+      <BorderBeam duration={12} delay={9} />
     </figure>
   );
 };

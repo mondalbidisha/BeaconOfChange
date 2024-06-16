@@ -1,5 +1,4 @@
 "use client";
-
 import { Righteous } from "next/font/google";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
