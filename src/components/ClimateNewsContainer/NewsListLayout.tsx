@@ -43,7 +43,7 @@ export function NewsListLayout(notificationData: any) {
 	let notifications = Array.isArray(notificationData) && notificationData.length > 0 ? notificationData : notificationData.notificationData;
 
   return (
-    <div className="relative flex max-h-[550px] min-h-[550px] w-full max-w-[80%] flex-col overflow-hidden rounded-lg border bg-background p-10 shadow-lg">
+    <div className="relative flex h-full w-full max-w-[90%] flex-col overflow-hidden rounded-lg border bg-background p-10 shadow-lg">
       <AnimatedList>
         {notifications.map((item: Item, idx: any) => (
           <Notification {...item} key={idx} />

@@ -28,7 +28,7 @@ export const newsDataPrompt: any = `
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [news article headline],
-    details - [2-3 sentences summarizing the news],
+    details - [3-4 sentences summarizing the news],
     source - [name of news source],
     
     Please provide only the generated or enhanced message, without any additional explanations or suggestions.
