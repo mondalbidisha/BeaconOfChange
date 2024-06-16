@@ -7,6 +7,7 @@
 // import * as THREE from "three";
 import React from "react";
 import HomepageLayout from "@/components/HomepageLayout";
+import Header from "@/components/Header";
 
 export default function Home() {
     
@@ -36,6 +37,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+      {/* <Header /> */}
       <HomepageLayout />
     </main>
   );

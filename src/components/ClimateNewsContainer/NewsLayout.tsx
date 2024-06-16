@@ -5,6 +5,9 @@ import Meteors from "@/components/magicui/meteors";
 import { NewsListLayout } from "./NewsListLayout";
 import { newsDataPrompt } from "@/constants/promptTemplates";
 import { geminiGenerate } from "@/utils/gemini-generate";
+import ShimmerButton from "../magicui/shimmer-button";
+import { TiGroupOutline } from "react-icons/ti";
+import Link from "next/link";
 
 function NewsLayout() {
 	const [notificationData, setNotificationData] = useState([]);
@@ -47,6 +50,20 @@ function NewsLayout() {
 						<NewsListLayout notificationData={notificationData}/>
 					</div>
 				</FadeIn>
+				<FadeInStagger />
+				<div className="flex items-center text-center mt-10 mb-10 flex-col text-slate-100 gap-2 text-xl px-10">
+					Sounds concerning right? IT IS !! Here's how you can do your bit and get involved. 
+				</div>
+				<div className="flex items-center text-center mt-10 flex-col text-slate-100 gap-2">
+					<Link href="/get-involved">
+						<ShimmerButton 
+							className="shadow-3xl">
+							<span className="whitespace-pre-wrap gap-2 p-[5px] text-center text-sm font-medium leading-none tracking-[2px] text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+								Get Involved
+							</span>
+						</ShimmerButton>
+					</Link>
+				</div>
 			</div>}
 		</>
   );

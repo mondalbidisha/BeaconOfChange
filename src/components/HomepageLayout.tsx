@@ -41,7 +41,7 @@ export default function HomepageLayout() {
   };
 
   return (
-    <main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+    <div className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
       {isLoading ?
         <RiseLoader
           color={"#36d7b7"}
@@ -56,7 +56,7 @@ export default function HomepageLayout() {
           <ParentLayout />
           <NewsLayout />
         </> } 
-    </main>
+    </div>
   );
 }
 

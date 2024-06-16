@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaEarthAmericas } from "react-icons/fa6";
+import Link from "next/link";
 
 function Header() {
   const [active, setActive] = React.useState(0);
@@ -21,7 +22,7 @@ function Header() {
                 active == index && " border-b-2 border-b-yellow-500"
               } inline-block cursor-pointer  border-b-yellow-500 transition duration-300 ease-in-out hover:border-b-2 hover:text-white`}
             >
-              {menu}
+              <Link href={menu.url}>{menu.name}</Link>
             </motion.li>
           );
         })}
@@ -33,7 +34,16 @@ function Header() {
 export default Header;
 
 const menus = [
-  "Home",
-  "Get Involved",
-  "Subscribe"
+  {
+    name: "Home",
+    url: "/"
+  },
+  {
+    name: "Get Involved",
+    url: "/get-involved"
+  },
+  {
+    name: "Subscribe",
+    url: "/subscribe"
+  },
 ];
