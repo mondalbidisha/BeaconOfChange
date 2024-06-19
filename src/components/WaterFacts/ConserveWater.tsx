@@ -7,25 +7,29 @@ import { geminiGenerate } from "@/utils/gemini-generate";
 import { waterSaverPrompt } from "@/constants/promptTemplates";
 
 export default function ConserveWater() {
-  const [notificationData, setNotificationData] = useState([]);
+  const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
 		const message = `generate 1 sentence relevant saving water to combat climate change. Perform web search to fetch latest and most accurate data.`
 		geminiGenerate(message, waterSaverPrompt).then((response) => {
-			let data: any = response?.replaceAll("\n", "");
-			data = data?.replaceAll("```json", "");
-			setNotificationData(JSON.parse(data));
+      try {
+        let data: any = response?.replaceAll("\n", "");
+        data = data?.replaceAll("```json", "");
+        setData(JSON.parse(data));
+      } catch(err) {
+        console.log(JSON.stringify(err))
+      }
 		})
 	}
 
 	useEffect(() => {
-		if (notificationData.length == 10) {
+		if (data.length == 10) {
 			setIsLoading(false)
 		} else {
 			parseGeminiResponse()
 		}
-	}, [notificationData.length])
+	}, [data.length])
 
   return (
     <div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 pb-20 pt-10">
@@ -47,7 +51,7 @@ export default function ConserveWater() {
         </FadeIn>
         <FadeIn>
 					<div className="flex items-center flex-col h-[70vh]">
-						{isLoading ? <></> : <NewsListLayout notificationData={notificationData}/>}
+						{isLoading ? <></> : <NewsListLayout data={data}/>}
 					</div>
 				</FadeIn>
     </div>

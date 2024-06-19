@@ -40,14 +40,14 @@ const Notification = ({ title, details, source }: Item) => {
   );
 };
 
-export function NewsListLayout(notificationData: any) {
+export function NewsListLayout(data: any) {
 
-	let notifications = Array.isArray(notificationData) && notificationData.length > 0 ? notificationData : notificationData.notificationData;
+	let sourceData = Array.isArray(data) && data.length > 0 ? data : data.data;
 
   return (
     <div className="relative flex h-full w-full max-w-[90%] flex-col overflow-hidden rounded-lg border bg-background p-10 shadow-lg">
       <AnimatedList>
-        {notifications.map((item: Item, idx: any) => (
+        {sourceData.map((item: Item, idx: any) => (
           <Notification {...item} key={idx} />
         ))}
       </AnimatedList>

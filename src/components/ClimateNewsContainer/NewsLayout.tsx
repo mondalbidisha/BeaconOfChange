@@ -9,25 +9,29 @@ import ShimmerButton from "../magicui/shimmer-button";
 import Link from "next/link";
 
 function NewsLayout() {
-	const [notificationData, setNotificationData] = useState([]);
+	const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
 		const message = `generate 3-4 sentences relevant to climate change news affecting the world. Perform web search to fetch latest and most accurate data. Include citations for all sources.`
 		geminiGenerate(message, newsDataPrompt).then((response) => {
-			let data: any = response?.replaceAll("\n", "");
-			data = data?.replaceAll("```json", "");
-			setNotificationData(JSON.parse(data));
+			try {
+				let responseData: any = response?.replaceAll("\n", "");
+				responseData = responseData?.replaceAll("```json", "");
+				setData(JSON.parse(responseData));
+			} catch(err: any) {
+				console.log(JSON.stringify(err))
+			}
 		})
 	}
 
 	useEffect(() => {
-		if (notificationData.length == 5) {
+		if (data.length == 5) {
 			setIsLoading(false)
 		} else {
 			parseGeminiResponse()
 		}
-	}, [notificationData.length])
+	}, [data.length])
 
   return (
 		<>
@@ -46,7 +50,7 @@ function NewsLayout() {
 				<FadeInStagger />
 				<FadeIn>
 					<div className="flex items-center flex-col h-[70vh]">
-						<NewsListLayout notificationData={notificationData}/>
+						<NewsListLayout data={data}/>
 					</div>
 				</FadeIn>
 				<FadeInStagger />

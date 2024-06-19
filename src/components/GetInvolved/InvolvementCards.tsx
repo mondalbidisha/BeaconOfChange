@@ -42,7 +42,8 @@ function InvolvementCards() {
                     </MagicCard>
                     <MagicCard 
                         borderWidth={3}
-                        className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100">
+                        className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
+                        onClick={() => router.push('/fashion')}>
                         <motion.img
                             alt="Fashion and Clothes Image"
                             src={"/fashion.jpeg"}
@@ -54,11 +55,25 @@ function InvolvementCards() {
                     </MagicCard>
                 </MagicContainer>
             </div>
-            <div className="flex items-center text-justify flex-col text-slate-100 gap-2 px-[15%] mt-10">
+            <div className="flex items-center text-justify flex-col text-slate-100 gap-2 px-10 mb-10">
                 <MagicContainer className={"flex h-[500px] w-full flex-col gap-4 lg:h-[250px] lg:flex-row"}>
+                    <MagicCard 
+                        borderWidth={3}
+                        className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
+                        onClick={() => router.push('/home-energy')}>
+                        <motion.img
+                            alt="Fashion and Clothes Image"
+                            src={"/home-energy.jpg"}
+                            className="absolute h-full w-full object-cover brightness-40"
+                        />
+                        <p className="z-10 text-4xl font-medium text-slate-50">
+                            Home Energy
+                        </p>
+                    </MagicCard>
                     <MagicCard
                         borderWidth={3}
-                        className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100">
+                        className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
+                        onClick={() => router.push('/transport')}>
                         <motion.img
                             alt="Transport Image"
                             src={"/transport.jpeg"}
@@ -70,7 +85,8 @@ function InvolvementCards() {
                     </MagicCard>
                     <MagicCard 
                         borderWidth={3}
-                        className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100">
+                        className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
+                        onClick={() => router.push('/waste')}>
                         <motion.img
                             alt="Waste Image"
                             src={"/waste.jpeg"}
