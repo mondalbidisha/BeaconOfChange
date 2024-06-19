@@ -13,7 +13,7 @@ export default function FashionFactsLayout() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
-		const message = `generate 1 sentence relevant saving water to combat climate change. Perform web search to fetch latest and most accurate data.`
+		const message = `generate 1 sentence relevant sustainable fashion choices to help combat climate change. Perform web search to fetch latest and most accurate data.`
 		geminiGenerate(message, sustainableFashionPrompt).then((response: any) => {
             try {
                 let responseData: any = response?.replaceAll("\n", "");

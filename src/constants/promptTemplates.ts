@@ -45,12 +45,13 @@ export const newsDataPrompt: any = `
 export const waterSaverPrompt: any = `
     Prompt:
     I need water saving tips that will help combat climate change from all around the world. Perform a web search and pull the lastest data. 
-    Give me top 10 results only. Donot include anything additional in your response. 
+    Give me top 10 results only. Donot include anything additional in your response. DONOT return the response with numbers or bullet points.
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
-    details - [1 sentence explaining how to save water],
+    title - [title of the tip]
+    details - [1-2 sentences explaining how to save water],
     
     Please provide only the generated or enhanced message, without any additional explanations or suggestions.
 
@@ -66,14 +67,14 @@ export const waterSaverPrompt: any = `
 export const foodSaverPrompt: any = `
     Prompt:
     I need food loss and food wastage prevention tips that will help ensure a food secure future and combat climate change from all around the world.
-    Include how we can opt for sustainable and healthy food choices. 
+    Include how we can opt for sustainable and healthy food choices. DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
-    details - [1-2 sentence explaining how to save water],
+    details - [1-2 sentence explaining about sustainable food choices],
     
     Please provide only the generated or enhanced message, without any additional explanations or suggestions.
 
@@ -89,10 +90,10 @@ export const foodSaverPrompt: any = `
 export const sustainableFashionPrompt: any = `
     Prompt:
     I need sustainable fashion choices that will prevent wastage of clothes and textiles and also help combat climate change from all around the world.
-    Include how we can opt for sustainable fashion choices. 
+    Include how we can opt for sustainable fashion choices. DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
@@ -112,14 +113,37 @@ export const sustainableFashionPrompt: any = `
 export const transportFactsPrompt: any = `
     Prompt:
     I need tips on sustainable transport and travel choices that will minimize carbon footprint, fossil fuel comsumption and also help combat climate change from all around the world.
-    Include how we can opt for sustainable transportation choices. You response should unique, useful and informative.
+    Include how we can opt for sustainable transportation choices. You response should unique, useful and informative. DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
     details - [1-2 sentence explaining about sustainable transportation options],
+    
+    Please provide only the generated or enhanced message, without any additional explanations or suggestions.
+
+    Instruction:
+    {instruction}
+    
+    Original Message:
+    {message}
+    
+    Generated message as per instructions:
+`;
+
+export const homeEnergyFactsPrompt: any = `
+    Prompt:
+    I need tips on home energy and electricity conservation that will minimize carbon footprint, fossil fuel comsumption and also help combat climate change from all around the world.
+    Include how we can opt for sustainable home energy choices. You response should unique, useful and informative. DONOT return the response with numbers or bullet points.
+    Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
+    YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
+    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+
+    title - [title of the tip]
+    details - [1-2 sentence explaining about sustainable home energy options],
     
     Please provide only the generated or enhanced message, without any additional explanations or suggestions.
 
