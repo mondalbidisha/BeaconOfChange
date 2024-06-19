@@ -12,7 +12,7 @@ function Header() {
         <FaEarthAmericas className="text-4xl" />
         Beacon of Change
       </div>
-      <ul className="flex flex-wrap items-center gap-3 text-[11px] md:gap-10">
+      <ul className="flex flex-wrap items-center gap-3 text-base md:gap-10">
         {menus.map((menu, index) => {
           return (
             <motion.li
@@ -41,6 +41,10 @@ const menus = [
   {
     name: "Get Involved",
     url: "/get-involved"
+  },
+  {
+    name: "Shop",
+    url: "/shop"
   },
   {
     name: "Subscribe",
