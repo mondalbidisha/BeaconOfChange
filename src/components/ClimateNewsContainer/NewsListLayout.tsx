@@ -4,9 +4,9 @@ import { AnimatedList } from "@/components/magicui/animated-list";
 import { BorderBeam } from "../magicui/border-beam";
 
 interface Item {
-  title: string;
+  title?: string;
   details: string;
-	source: string;
+	source?: string;
 }
 
 const Notification = ({ title, details, source }: Item) => {
@@ -30,9 +30,9 @@ const Notification = ({ title, details, source }: Item) => {
           <p className="text-base font-normal text-white/60 mb-5">
             {details}
           </p>
-					<p className="text-sm font-normal text-white/60">
+          {source ? <p className="text-sm font-normal text-white/60">
 						Source - <span className="font-bold">{source}</span>
-					</p>
+					</p> : <></>}
         </div>
       </div>
       <BorderBeam duration={12} delay={9} />

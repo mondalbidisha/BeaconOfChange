@@ -6,7 +6,6 @@ import { NewsListLayout } from "./NewsListLayout";
 import { newsDataPrompt } from "@/constants/promptTemplates";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import ShimmerButton from "../magicui/shimmer-button";
-import { TiGroupOutline } from "react-icons/ti";
 import Link from "next/link";
 
 function NewsLayout() {

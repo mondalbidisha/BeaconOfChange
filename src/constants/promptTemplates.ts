@@ -41,3 +41,47 @@ export const newsDataPrompt: any = `
     
     Generated message as per instructions:
 `
+
+export const waterSaverPrompt: any = `
+    Prompt:
+    I need water saving tips that will help combat climate change from all around the world. Perform a web search and pull the lastest data. 
+    Give me top 10 results only. Donot include anything additional in your response. 
+    YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
+    Your response should be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+
+    details - [1 sentence explaining how to save water],
+    
+    Please provide only the generated or enhanced message, without any additional explanations or suggestions.
+
+    Instruction:
+    {instruction}
+    
+    Original Message:
+    {message}
+    
+    Generated message as per instructions:
+`
+
+export const foodSaverPrompt: any = `
+    Prompt:
+    I need food loss and food wastage prevention tips that will help ensure a food secure future and combat climate change from all around the world.
+    Include how we can opt for sustainable and healthy food choices. 
+    Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
+    YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
+    Your response should be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+
+    title - [title of the tip]
+    details - [1-2 sentence explaining how to save water],
+    
+    Please provide only the generated or enhanced message, without any additional explanations or suggestions.
+
+    Instruction:
+    {instruction}
+    
+    Original Message:
+    {message}
+    
+    Generated message as per instructions:
+`
