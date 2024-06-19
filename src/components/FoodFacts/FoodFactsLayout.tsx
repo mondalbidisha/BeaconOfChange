@@ -2,33 +2,34 @@
 import React, { useEffect, useState } from "react";
 import Meteors from "../magicui/meteors";
 import { FadeIn, FadeInStagger } from "../FadeIn";
-// import { UniDirectionalBeam } from "../UniDirectionalBeam";
-// import { motion } from "framer-motion";
-// import { StatsWithIcon } from "../StatsWithIcon";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import { NewsListLayout } from "../ClimateNewsContainer/NewsListLayout";
 import { foodSaverPrompt } from "@/constants/promptTemplates";
 
 export default function FoodFactsLayout() {
-    const [notificationData, setNotificationData] = useState([]);
+    const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
 		const message = `generate 1 sentence relevant saving water to combat climate change. Perform web search to fetch latest and most accurate data.`
 		geminiGenerate(message, foodSaverPrompt).then((response) => {
-			let data: any = response?.replaceAll("\n", "");
-			data = data?.replaceAll("```json", "");
-			setNotificationData(JSON.parse(data));
+            try {
+                let data: any = response?.replaceAll("\n", "");
+                data = data?.replaceAll("```json", "");
+                setData(JSON.parse(data));
+            } catch(err: any) {
+                console.log(JSON.stringify(err))
+            }
 		})
 	}
 
 	useEffect(() => {
-		if (notificationData.length == 10) {
+		if (data.length == 10) {
 			setIsLoading(false)
 		} else {
 			parseGeminiResponse()
 		}
-	}, [notificationData.length])
+	}, [data.length])
     
   return (
     <main className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10">
@@ -53,7 +54,7 @@ export default function FoodFactsLayout() {
         <FadeInStagger />
         <FadeIn>
             <div className="flex items-center flex-col h-[70vh]">
-                {isLoading ? <></> : <NewsListLayout notificationData={notificationData}/>}
+                {isLoading ? <></> : <NewsListLayout data={data}/>}
             </div>
         </FadeIn>
     </main>
