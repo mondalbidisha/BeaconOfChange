@@ -2,21 +2,21 @@
 import React, { useEffect, useState } from "react";
 import Meteors from "../magicui/meteors";
 import { FadeIn, FadeInStagger } from "../FadeIn";
-import { NewsListLayout } from "../ClimateNewsContainer/NewsListLayout";
 import { geminiGenerate } from "@/utils/gemini-generate";
-import { transportFactsPrompt } from "@/constants/promptTemplates";
+import { NewsListLayout } from "../ClimateNewsContainer/NewsListLayout";
+import { homeEnergyFactsPrompt } from "@/constants/promptTemplates";
 
-export default function TransportFactsLayout() {
+export default function HomeEnergyTips() {
     const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
-		const message = `generate 1 sentence relevant to sustainable transportation choice that will help combat climate change. Perform web search to fetch latest and most accurate data.`
-		geminiGenerate(message, transportFactsPrompt).then((response: any) => {
+		const message = `generate 1 sentence relevant saving water to combat climate change. Perform web search to fetch latest and most accurate data.`
+		geminiGenerate(message, homeEnergyFactsPrompt).then((response: any) => {
             try {
-                let responseData: any = response?.replaceAll("\n", "");
-                responseData = responseData?.replaceAll("```json", "");
-                setData(JSON.parse(responseData));
+                let data: any = response?.replaceAll("\n", "");
+                data = data?.replaceAll("```json", "");
+                setData(JSON.parse(data));
             } catch(err: any) {
                 console.log(JSON.stringify(err))
             }
@@ -36,13 +36,12 @@ export default function TransportFactsLayout() {
         <Meteors number={40}/>
         <FadeIn>
             <div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase opacity-90 tracking-[4px]">
-                Transport
+                Energy Conservation
             </div>
         </FadeIn>
         <FadeIn>
             <div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
-            In most high-income countries, personal transport is the lifestyle domain with the largest contribution to the overall lifestyle footprint.
-            The world’s roadways are clogged with vehicles, most of them burning fossil fuels like petrol, diesel, gasoline etc. Fossil fuels power the ships that carry trade and the airplanes that allow us to travel.
+                As individuals, we can collectively do our part to make our homes more energy efficient and combat climate change.
             </div>
         </FadeIn>
         <FadeInStagger />
