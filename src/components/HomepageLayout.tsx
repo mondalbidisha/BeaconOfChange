@@ -23,7 +23,7 @@ export default function HomepageLayout() {
     }
 
     useEffect(() => {
-      if (slideData.length == 5) {
+      if (slideData.length) {
         setTimeout(() => {
           setIsLoading(false)
         }, 2000)

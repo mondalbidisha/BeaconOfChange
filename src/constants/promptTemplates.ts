@@ -155,3 +155,53 @@ export const homeEnergyFactsPrompt: any = `
     
     Generated message as per instructions:
 `;
+
+export const wasteFactsPrompt: any = `
+    Prompt:
+    I need tips on home generated waste management and recycling tips that will minimize total waste generated, reduce plastic usage, and also help combat climate change from all around the world.
+    Include how we can opt for efficient waste management and recycling choices. You response should unique, useful and informative. DONOT return the response with numbers or bullet points.
+    Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
+    YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
+    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+
+    title - [title of the tip]
+    details - [1-2 sentence explaining about sustainable home energy options],
+    
+    Please provide only the generated or enhanced message, without any additional explanations or suggestions.
+
+    Instruction:
+    {instruction}
+    
+    Original Message:
+    {message}
+    
+    Generated message as per instructions:
+`;
+
+export const campaignsPrompt: any = `
+    Prompt:
+    I need a list of all active and ongoing campaigns that are actively trying to combat climate change.
+    Include results based on a users location. Results from user's current city get highest priority, if there are no campaigns in the current city, 
+    then return results from the current state and if no campaigns are found return results from current country. If no results are found for a particular country
+    then return results from all over the world.
+    DONOT return the response with numbers or bullet points.
+    Perform a web search and pull the lastest data. Give me top 5 results only. Donot include anything additional in your response. 
+    YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
+    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+
+    title - [title of the campaign]
+    details - [2 sentences explaining the campaigns motive and agenda],
+    source - [Name of the organisation conducting the campaign]
+    
+    Please provide only the generated or enhanced message, without any additional explanations or suggestions.
+
+    Instruction:
+    {instruction}
+    
+    Original Message:
+    {message}
+    
+    Generated message as per instructions:
+`;

@@ -11,7 +11,7 @@ export default function TransportFactsLayout() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
-		const message = `generate 1 sentence relevant to sustainable transportation choice that will help combat climate change. Perform web search to fetch latest and most accurate data.`
+		const message = `generate 1-2 sentence relevant to sustainable transportation choice that will help combat climate change. Perform web search to fetch latest and most accurate data.`
 		geminiGenerate(message, transportFactsPrompt).then((response: any) => {
             try {
                 let responseData: any = response?.replaceAll("\n", "");

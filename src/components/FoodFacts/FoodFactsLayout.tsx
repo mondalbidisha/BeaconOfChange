@@ -11,7 +11,7 @@ export default function FoodFactsLayout() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
-		const message = `generate 1 sentence relevant sustainable food choices that will help combat combat climate change. Perform web search to fetch latest and most accurate data.`
+		const message = `generate 1-2 sentence relevant sustainable food choices that will help combat combat climate change. Perform web search to fetch latest and most accurate data.`
 		geminiGenerate(message, foodSaverPrompt).then((response: any) => {
             try {
                 let data: any = response?.replaceAll("\n", "");
