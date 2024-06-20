@@ -11,7 +11,7 @@ export default function ConserveWater() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
-		const message = `generate 1 sentence relevant saving water to combat climate change. Perform web search to fetch latest and most accurate data.`
+		const message = `generate 1-2 sentence relevant saving water to combat climate change. Perform web search to fetch latest and most accurate data.`
 		geminiGenerate(message, waterSaverPrompt).then((response: any) => {
       try {
         let data: any = response?.replaceAll("\n", "");

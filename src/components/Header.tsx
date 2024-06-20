@@ -43,6 +43,10 @@ const menus = [
     url: "/get-involved"
   },
   {
+    name: "Campaign",
+    url: "/campaign"
+  },
+  {
     name: "Shop",
     url: "/shop"
   },

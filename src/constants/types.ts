@@ -18,3 +18,9 @@ export type CurrentSlideData = {
 	data: Data;
 	index: number;
 };
+
+export interface Item {
+	title?: string;
+	details: string;
+	  source?: string;
+  }
