@@ -4,16 +4,16 @@ import { FadeIn } from "../FadeIn";
 import Meteors from "@/components/magicui/meteors";
 import { InfoBox } from "../InfoBox";
 import { geminiGenerate } from "@/utils/gemini-generate";
-import { campaignsPrompt } from "@/constants/promptTemplates";
+import { sustainableShoppingPrompt } from "@/constants/promptTemplates";
 import { Item } from "@/constants/types";
 
-function CampaignLayout(location: any) {
+function ShopSustainableLayout(location: any) {
   const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
-		const message = `give me climate change campaigns based on ${JSON.stringify(location)} location. Perform web search to fetch latest and most accurate data.`
-		geminiGenerate(message, campaignsPrompt).then((response: any) => {
+		const message = `give me sustainable B2C businesses based on ${JSON.stringify(location)} location. Perform web search to fetch latest and most accurate data.`
+		geminiGenerate(message, sustainableShoppingPrompt).then((response: any) => {
 			try {
 				let responseData: any = response?.replaceAll("\n", "");
 				responseData = responseData?.replaceAll("```json", "");
@@ -38,23 +38,32 @@ function CampaignLayout(location: any) {
 				<Meteors number={40}/>
 				<FadeIn>
 					<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px]">
-						Be a Beacon of Change
+						Shop Sustainably
 					</div>
 				</FadeIn>
 				<FadeIn>
 					<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
-						Participating in climate change campaigns is a powerful way to make a tangible difference in the fight against global warming. It raises awareness and drives collective action, which can lead to significant policy changes and widespread adoption of sustainable practices. 
+                        Shopping sustainably can be a powerful tool to combat climate change. Sustainable businesses often reduce their carbon footprint through renewable energy, recycled materials, and efficient transport.
+                        This translates to fewer greenhouse gasses being released.
 					</div>
 				</FadeIn>
 				<FadeIn>
 					<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
-						The benefits are profound -- we not only gain a deep sense of purpose but also get to connect with a community of like-minded advocates, and actively contribute to safeguarding the planet for future generations. 
-						Moreover, such involvement can foster personal growth, equipping us with valuable skills in advocacy, leadership, and community organizing, all while making a positive impact on the world.
+                        As a customer, there are profound benefits to choosing sustainable businesses.  
+                        Shopping sustainably offers a sense of well-being and personal satisfcation about aligning your values with your purchases. 
+                        Sustainable practices can often lead to higher quality, more durable products. 
+                        Many sustainable businesses are transparent about their practices, fostering trust and allowing you to make informed choices.
+                        Next time you think about buying something, however big or small consider purchasing from sustainable businesses !! 
+					</div>
+				</FadeIn>
+                <FadeIn>
+					<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+                        Next time you think about buying something, however big or small consider purchasing from sustainable businesses !! 
 					</div>
 				</FadeIn>
 				<FadeIn>
 					<div className="flex items-center text-center mb-10 flex-col text-slate-100 font-bold gap-2 text-2xl px-10">
-						Be a Beacon of Change and inspire others to follow your lead !!
+                        Even small shifts in your shopping habits can contribute to a positive environmental impact. 
 					</div>
 				</FadeIn>
 				<div className="px-20">
@@ -72,4 +81,4 @@ function CampaignLayout(location: any) {
   );
 }
 
-export default CampaignLayout;
+export default ShopSustainableLayout;

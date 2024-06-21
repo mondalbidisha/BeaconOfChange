@@ -1,15 +1,18 @@
 export const slideDataPrompt: string = `Prompt:
     You are supposed to act as a climate scientist with sufficient knowledge of global climate change and its impact all over the world.
     Your primary task is to generate content on some of the most pressing climate change issues. 
-    You are supposed to generate 3-4 sentences only. Do not use verbose language. 
-    Your response should be concise, easy to understand and should clearly express why it is such a pressing matter today. 
+    You are supposed to generate 4 sentences only. Do not use verbose language. 
     Include a relevant example of a recent event that occured due to climate change. USE DATA FROM WEB SEARCH. 
-    Include news data from last 3 months only, nothing older than that.
-    This message should resonate with all types of audiences. Target audience is common man. 
+    Include news data from last 3 months only, nothing older than that. Target audience is common man. 
     Response should only contain the content relevant to each point. DONOT include anything extra.
-    DONOT use the word "example" anywhere in the response
+    DONOT use the word "example" anywhere in the response.
+    Your response should be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
     Please provide only the generated or enhanced message, without any additional explanations or suggestions.
 
+    title - [title as provided in instruction]
+    details - [4 sentences summarizing the news],
+    
     Instruction:
     {instruction}
     
@@ -159,14 +162,17 @@ export const homeEnergyFactsPrompt: any = `
 export const wasteFactsPrompt: any = `
     Prompt:
     I need tips on home generated waste management and recycling tips that will minimize total waste generated, reduce plastic usage, and also help combat climate change from all around the world.
-    Include how we can opt for efficient waste management and recycling choices. You response should unique, useful and informative. DONOT return the response with numbers or bullet points.
-    Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
+    Include how we can opt for efficient waste management and recycling choices. 
+    You response should unique, useful and informative. DONOT return the response with numbers or bullet points.
+    Perform a web search and pull the lastest data. Give me top 10 results only. 
+    Provide USEFUL tips that CAN be incorporated by individuals in their everyday life.
+    Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
     Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
-    details - [1-2 sentence explaining about sustainable home energy options],
+    details - [2 sentence explaining how this particular tip will can help reduce wastage],
     
     Please provide only the generated or enhanced message, without any additional explanations or suggestions.
 
@@ -182,11 +188,12 @@ export const wasteFactsPrompt: any = `
 export const campaignsPrompt: any = `
     Prompt:
     I need a list of all active and ongoing campaigns that are actively trying to combat climate change.
-    Include results based on a users location. Results from user's current city get highest priority, if there are no campaigns in the current city, 
-    then return results from the current state and if no campaigns are found return results from current country. If no results are found for a particular country
-    then return results from all over the world.
+    Strictly Include results based on a users location. Results from user's current city get the highest priority, if there are no campaigns in the current city, 
+    only then return results from the current state and if no campaigns are found only then return results from user's current country. 
+    If no results are found for a particular country only then return results from all over the world.
     DONOT return the response with numbers or bullet points.
-    Perform a web search and pull the lastest data. Give me top 5 results only. Donot include anything additional in your response. 
+    Perform a web search and pull the lastest data based on location preferences defined above. 
+    Give me top 5 results only. Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
     Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
@@ -194,6 +201,34 @@ export const campaignsPrompt: any = `
     title - [title of the campaign]
     details - [2 sentences explaining the campaigns motive and agenda],
     source - [Name of the organisation conducting the campaign]
+    
+    Please provide only the generated or enhanced message, without any additional explanations or suggestions.
+
+    Instruction:
+    {instruction}
+    
+    Original Message:
+    {message}
+    
+    Generated message as per instructions:
+`;
+
+export const sustainableShoppingPrompt: any = `
+    Prompt:
+    I need a list of all sustainable B2C businesses that are actively trying to combat climate change.
+    These business should either use sustainable manufacturing processes, sustainable materials, ethical sourcing of raw materials etc.
+    Strictly Include results based on a users location. Results from user's current city get the highest priority, if there are no campaigns in the current city, 
+    only then return results from the current state and if no campaigns are found only then return results from user's current country. 
+    If no results are found for a particular country only then return results from all over the world.
+    DONOT return the response with numbers or bullet points.
+    Perform a web search and pull the lastest data based on location preferences defined above. 
+    Give me top 5 results only. Donot include anything additional in your response. 
+    YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
+    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+
+    title - [Name of the Business]
+    details - [2-3 sentences explaining about the businesses unique selling point, sustainable products],
     
     Please provide only the generated or enhanced message, without any additional explanations or suggestions.
 

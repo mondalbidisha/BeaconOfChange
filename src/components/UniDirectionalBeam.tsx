@@ -5,6 +5,7 @@ import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import React, { forwardRef, useRef } from "react";
 import { motion } from "framer-motion";
 
+/* eslint-disable react/display-name */
 const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React.ReactNode }>
 (({ className, children }, ref) => {
   return (
@@ -48,7 +49,7 @@ export function UniDirectionalBeam() {
 									<h3 className="text-2xl mb-5 font-semibold text-neutral-700 dark:text-neutral-300">
 											1980
 									</h3>
-									<p className="max-w-[150px] text-wrap text-base text-neutral-100">Since the 1980's world water usage has grown by 1% every year</p>
+									<p className="max-w-[150px] text-wrap text-base text-neutral-100">Since the 1980&apos;s world water usage has grown by 1% every year</p>
 							</div>
 						</div>
           </Circle>
