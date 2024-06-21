@@ -55,7 +55,7 @@ function NewsLayout() {
 				</FadeIn>
 				<FadeInStagger />
 				<div className="flex items-center text-center mt-10 mb-10 flex-col text-slate-100 gap-2 text-xl px-10">
-					Sounds concerning right? IT IS !! Here's how you can do your bit and get involved. 
+					Sounds concerning right? IT IS !! Here&apos;s how you can do your bit and get involved. 
 				</div>
 				<div className="flex items-center text-center mt-10 flex-col text-slate-100 gap-2">
 					<Link href="/get-involved">
