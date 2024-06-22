@@ -6,6 +6,7 @@ import { InfoBox } from "../InfoBox";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import { sustainableShoppingPrompt } from "@/constants/promptTemplates";
 import { Item } from "@/constants/types";
+import Image from "next/image";
 
 function ShopSustainableLayout(location: any) {
   const [data, setData] = useState([]);
@@ -67,7 +68,11 @@ function ShopSustainableLayout(location: any) {
 					</div>
 				</FadeIn>
 				<div className="px-20">
-					{isLoading ? <></> :
+					{isLoading ? 
+						<div className="w-full flex flex-row justify-center mt-5">
+							<Image src={"/loader.svg"} width={150} height={150} alt="Loading..." />
+						</div> 
+						:
 						data.map((item: Item, idx: any) => (
 							/* eslint-disable react/jsx-key */
 							<div className="my-5">

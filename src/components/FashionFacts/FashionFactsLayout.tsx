@@ -7,6 +7,7 @@ import { fashionFacts } from "@/constants/Data";
 import { NewsListLayout } from "../ClimateNewsContainer/NewsListLayout";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import { sustainableFashionPrompt } from "@/constants/promptTemplates";
+import Image from "next/image";
 
 export default function FashionFactsLayout() {
     const [data, setData] = useState([]);
@@ -66,7 +67,13 @@ export default function FashionFactsLayout() {
         </div>
         <FadeIn>
             <div className="flex items-center flex-col h-[70vh]">
-                {isLoading ? <></> : <NewsListLayout data={data}/>}
+                {isLoading ? 
+                    <div className="w-full flex flex-row justify-center mt-5">
+                        <Image src={"/loader.svg"} width={150} height={150} alt="Loading..." />
+                    </div>
+                : 
+                    <NewsListLayout data={data}/>
+                }
             </div>
         </FadeIn>
     </main>
