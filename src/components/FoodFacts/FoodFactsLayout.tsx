@@ -5,6 +5,7 @@ import { FadeIn, FadeInStagger } from "../FadeIn";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import { NewsListLayout } from "../ClimateNewsContainer/NewsListLayout";
 import { foodSaverPrompt } from "@/constants/promptTemplates";
+import Image from "next/image";
 
 export default function FoodFactsLayout() {
     const [data, setData] = useState([]);
@@ -54,7 +55,13 @@ export default function FoodFactsLayout() {
         <FadeInStagger />
         <FadeIn>
             <div className="flex items-center flex-col h-[70vh]">
-                {isLoading ? <></> : <NewsListLayout data={data}/>}
+                {isLoading ? 
+                    <div className="w-full flex flex-row justify-center mt-5">
+                        <Image src={"/loader.svg"} width={150} height={150} alt="Loading..." />
+                    </div>
+                : 
+                    <NewsListLayout data={data}/>
+                }
             </div>
         </FadeIn>
     </main>

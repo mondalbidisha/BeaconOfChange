@@ -1,5 +1,6 @@
 "use client"
 import CampaignLayout from "@/components/CampaignContainer/CampaignLayout";
+import { Loader } from "@/components/Loader";
 import React, { useEffect, useState } from "react";
 import {
   setKey,
@@ -61,7 +62,11 @@ export default function Waste() {
 
   return (
     <main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
-			{isLoading ? <></> : <CampaignLayout location={userLocation}/>}
+		{isLoading ? 
+			<Loader 
+				message={"Hang on, putting on our superhero capes..."}
+			/> : 
+		    <CampaignLayout location={userLocation}/>}
     </main>
   );
 }

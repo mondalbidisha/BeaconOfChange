@@ -7,6 +7,7 @@ import { newsDataPrompt } from "@/constants/promptTemplates";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import ShimmerButton from "../magicui/shimmer-button";
 import Link from "next/link";
+import { Loader } from "../Loader";
 
 function NewsLayout() {
 	const [data, setData] = useState([]);
@@ -35,39 +36,45 @@ function NewsLayout() {
 
   return (
 		<>
-			{isLoading ? <></> : <div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
-				<Meteors number={40}/>
-				<FadeIn>
-					<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase opacity-90 tracking-[4px]">
-						Latest Climate Change News - Stay Informed
+			{isLoading ? 
+				<Loader 
+					message={"Hang on, putting on our superhero capes..."}
+				/> 
+			: 
+				<div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
+					<Meteors number={40}/>
+					<FadeIn>
+						<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase opacity-90 tracking-[4px]">
+							Latest Climate Change News - Stay Informed
+						</div>
+					</FadeIn>
+					<FadeIn>
+						<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+							Stay updated on the impact of climate change worldwide and latest developments. Understanding the problem is the first step toward recognizing the need for necessary action for a sustainable future.
+						</div>
+					</FadeIn>
+					<FadeInStagger />
+					<FadeIn>
+						<div className="flex items-center flex-col h-[70vh]">
+							<NewsListLayout data={data}/>
+						</div>
+					</FadeIn>
+					<FadeInStagger />
+					<div className="flex items-center text-center mt-10 mb-10 flex-col text-slate-100 gap-2 text-xl px-10">
+						Sounds concerning right? IT IS !! Here&apos;s how you can do your bit and get involved. 
 					</div>
-				</FadeIn>
-				<FadeIn>
-					<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
-						Stay updated on the impact of climate change worldwide and latest developments. Understanding the problem is the first step toward recognizing the need for necessary action for a sustainable future.
+					<div className="flex items-center text-center mt-10 flex-col text-slate-100 gap-2">
+						<Link href="/get-involved">
+							<ShimmerButton 
+								className="shadow-3xl">
+								<span className="whitespace-pre-wrap gap-2 p-[5px] text-center text-sm font-medium leading-none tracking-[2px] text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+									Get Involved
+								</span>
+							</ShimmerButton>
+						</Link>
 					</div>
-				</FadeIn>
-				<FadeInStagger />
-				<FadeIn>
-					<div className="flex items-center flex-col h-[70vh]">
-						<NewsListLayout data={data}/>
-					</div>
-				</FadeIn>
-				<FadeInStagger />
-				<div className="flex items-center text-center mt-10 mb-10 flex-col text-slate-100 gap-2 text-xl px-10">
-					Sounds concerning right? IT IS !! Here&apos;s how you can do your bit and get involved. 
 				</div>
-				<div className="flex items-center text-center mt-10 flex-col text-slate-100 gap-2">
-					<Link href="/get-involved">
-						<ShimmerButton 
-							className="shadow-3xl">
-							<span className="whitespace-pre-wrap gap-2 p-[5px] text-center text-sm font-medium leading-none tracking-[2px] text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-								Get Involved
-							</span>
-						</ShimmerButton>
-					</Link>
-				</div>
-			</div>}
+			}
 		</>
   );
 }

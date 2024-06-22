@@ -217,8 +217,8 @@ export const sustainableShoppingPrompt: any = `
     Prompt:
     I need a list of all sustainable B2C businesses that are actively trying to combat climate change.
     These business should either use sustainable manufacturing processes, sustainable materials, ethical sourcing of raw materials etc.
-    Strictly Include results based on a users location. Results from user's current city get the highest priority, if there are no campaigns in the current city, 
-    only then return results from the current state and if no campaigns are found only then return results from user's current country. 
+    Strictly Include results based on a users location. Results from user's current city get the highest priority, if there are no sustainable B2C businesses in the current city, 
+    only then return results from the current state and if no sustainable B2C businesses are found only then return results from user's current country. 
     If no results are found for a particular country only then return results from all over the world.
     DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data based on location preferences defined above. 

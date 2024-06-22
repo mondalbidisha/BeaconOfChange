@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import SliderContainer from "@/components/SlidingCarousel/SliderContainer";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import { sliderData } from "@/constants/sliderData";
-import RiseLoader from "react-spinners/RiseLoader";
 import ParentLayout from "@/components/ClimateFactsContainer/ParentLayout";
 import { slideDataPrompt } from "@/constants/promptTemplates";
 import NewsLayout from "@/components/ClimateNewsContainer/NewsLayout";
+import { Loader } from "./Loader";
 
 export default function HomepageLayout() {
     const [isLoading, setIsLoading] = useState(true);
@@ -50,24 +50,11 @@ export default function HomepageLayout() {
       }
     }, [slideData.length])
 
-  const override: any = {
-    display: "block",
-    margin: "0 auto",
-    position: "fixed",
-    top: "40vh",
-    left: "32vw",
-  };
-
   return (
     <div className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
       {isLoading ?
-        <RiseLoader
-          color={"#36d7b7"}
-          loading={isLoading}
-          cssOverride={override}
-          size={100}
-          aria-label="Loading Spinner"
-          data-testid="loader"
+        <Loader 
+          message={"Hang tight, unwrapping some sustainable magic..."}
         /> :
         <>
           <SliderContainer />
