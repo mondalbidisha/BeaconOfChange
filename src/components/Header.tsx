@@ -51,7 +51,11 @@ const menus = [
     url: "/shop"
   },
   {
-    name: "Subscribe",
-    url: "/subscribe"
+    name: "Blog",
+    url: "/blog"
+  },
+  {
+    name: "Join",
+    url: "/join"
   },
 ];

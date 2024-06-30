@@ -2,7 +2,6 @@ import React from "react";
 import { BentoGridLayout } from "./BentoGridLayout";
 import { FadeIn, FadeInStagger } from "../FadeIn";
 import Meteors from "@/components/magicui/meteors";
-import GradualSpacing from "@/components/magicui/gradual-spacing";
 
 function ParentLayout() {
 
