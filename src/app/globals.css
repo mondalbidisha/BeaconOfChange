@@ -203,3 +203,9 @@
   background-image: linear-gradient(315deg, #3649aa 0%, #2bd2ff 52%, #2b60ff 90%);
 }
 
+#ecoverse-container {      
+  display: block;    
+  height: 100vh;    
+  width: 100vw;  
+  border: none; 
+}

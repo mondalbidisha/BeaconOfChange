@@ -1,14 +1,14 @@
 "use client"
 import React, { useEffect, useState } from "react";
-import { FadeIn } from "../FadeIn";
 import Meteors from "@/components/magicui/meteors";
 import { InfoBox } from "../InfoBox";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import { campaignsPrompt } from "@/constants/promptTemplates";
 import { Item } from "@/constants/types";
+import Image from "next/image";
 
 function CampaignLayout(location: any) {
-  const [data, setData] = useState([]);
+  	const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
@@ -25,7 +25,7 @@ function CampaignLayout(location: any) {
 	}
 
 	useEffect(() => {
-		if (data.length) {
+		if (data.length && location) {
 			setIsLoading(false)
 		} else {
 			parseGeminiResponse()
@@ -36,29 +36,25 @@ function CampaignLayout(location: any) {
 		<>
 			<div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
 				<Meteors number={40}/>
-				<FadeIn>
-					<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px]">
-						Be a Beacon of Change
-					</div>
-				</FadeIn>
-				<FadeIn>
-					<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
-						Participating in climate change campaigns is a powerful way to make a tangible difference in the fight against global warming. It raises awareness and drives collective action, which can lead to significant policy changes and widespread adoption of sustainable practices. 
-					</div>
-				</FadeIn>
-				<FadeIn>
-					<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
-						The benefits are profound -- we not only gain a deep sense of purpose but also get to connect with a community of like-minded advocates, and actively contribute to safeguarding the planet for future generations. 
-						Moreover, such involvement can foster personal growth, equipping us with valuable skills in advocacy, leadership, and community organizing, all while making a positive impact on the world.
-					</div>
-				</FadeIn>
-				<FadeIn>
-					<div className="flex items-center text-center mb-10 flex-col text-slate-100 font-bold gap-2 text-2xl px-10">
-						Be a Beacon of Change and inspire others to follow your lead !!
-					</div>
-				</FadeIn>
+				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px]">
+					Be a Beacon of Change
+				</div>
+				<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+					Participating in climate change campaigns is a powerful way to make a tangible difference in the fight against global warming. It raises awareness and drives collective action, which can lead to significant policy changes and widespread adoption of sustainable practices. 
+				</div>
+				<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+					The benefits are profound -- we not only gain a deep sense of purpose but also get to connect with a community of like-minded advocates, and actively contribute to safeguarding the planet for future generations. 
+					Moreover, such involvement can foster personal growth, equipping us with valuable skills in advocacy, leadership, and community organizing, all while making a positive impact on the world.
+				</div>
+				<div className="flex items-center text-center mb-10 flex-col text-slate-100 font-bold gap-2 text-2xl px-10">
+					Be a Beacon of Change and inspire others to follow your lead !!
+				</div>
 				<div className="px-20">
-					{isLoading ? <></> :
+					{isLoading ? 
+						<div className="w-full flex flex-row justify-center mt-5">
+							<Image src={"/loader.svg"} width={150} height={150} alt="Loading..." />
+						</div> 
+					 :
 						data.map((item: Item, idx: any) => (
 							/* eslint-disable react/jsx-key */
 							<div className="my-5">
