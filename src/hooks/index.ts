@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { BlogResponse } from '../types/blog';
 import { Post } from '../types/post';
 
@@ -66,7 +66,7 @@ export const useBlogs = () => {
 };
 
 export const useBlog = ({ id }: { id: string }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [blog, setBlog] = useState<Post>({
     id: '',
@@ -77,12 +77,8 @@ export const useBlog = ({ id }: { id: string }) => {
   });
 
   async function fetchBlog() {
-    const token = localStorage.getItem('token');
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/api/v1/blog/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    // const token = localStorage.getItem('token');
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/api/v1/blog/${id}`);
     setBlog(response.data.post);
     setLoading(false);
   }
@@ -91,18 +87,18 @@ export const useBlog = ({ id }: { id: string }) => {
     fetchBlog();
   }, [id]);
 
-  async function deleteBlog(blogId: string) {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/signin');
-    }
-    const response = await axios.delete(`${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/api/v1/blog/${blogId}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return response.data.message;
-  }
+  // async function deleteBlog(blogId: string) {
+  //   const token = localStorage.getItem('token');
+  //   if (!token) {
+  //     navigate('/signin');
+  //   }
+  //   const response = await axios.delete(`${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/api/v1/blog/${blogId}`, {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   });
+  //   return response.data.message;
+  // }
   return {
     loading,
     blog,

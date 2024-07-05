@@ -6,8 +6,8 @@ export const slideDataPrompt: string = `Prompt:
     Include news data from last 3 months only, nothing older than that. Target audience is common man. 
     Response should only contain the content relevant to each point. DONOT include anything extra.
     DONOT use the word "example" anywhere in the response.
-    Your response should be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
-    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+    Your response should be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the VALID JSON result and nothing else. DONOT include the word "json" in the response.
     Please provide only the generated or enhanced message, without any additional explanations or suggestions.
 
     title - [title as provided in instruction]
@@ -27,7 +27,7 @@ export const newsDataPrompt: any = `
     I need trending news on climate change from all around the world. Perform a web search and pull the lastest data. Give me top 5 results only. Donot include anything additional in your response. Include citations for all your sources.
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
     DATA SHOULD BE FROM JANUARY 2024 TO CURRENT DAY ONLY, DONOT respond with outdated information.
-    Your response should be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [news article headline],
@@ -50,7 +50,7 @@ export const waterSaverPrompt: any = `
     I need water saving tips that will help combat climate change from all around the world. Perform a web search and pull the lastest data. 
     Give me top 10 results only. Donot include anything additional in your response. DONOT return the response with numbers or bullet points.
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should strictly be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
@@ -73,7 +73,7 @@ export const foodSaverPrompt: any = `
     Include how we can opt for sustainable and healthy food choices. DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should strictly be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
@@ -96,8 +96,8 @@ export const sustainableFashionPrompt: any = `
     Include how we can opt for sustainable fashion choices. DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
-    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+    Your response should strictly be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the VALID JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
     details - [1-2 sentence explaining about sustainable fashion],
@@ -119,8 +119,8 @@ export const transportFactsPrompt: any = `
     Include how we can opt for sustainable transportation choices. You response should unique, useful and informative. DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
-    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+    Your response should strictly be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the VALID JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
     details - [1-2 sentence explaining about sustainable transportation options],
@@ -142,8 +142,8 @@ export const homeEnergyFactsPrompt: any = `
     Include how we can opt for sustainable home energy choices. You response should unique, useful and informative. DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data. Give me top 10 results only. Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
-    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+    Your response should strictly be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the VALID JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
     details - [1-2 sentence explaining about sustainable home energy options],
@@ -168,8 +168,8 @@ export const wasteFactsPrompt: any = `
     Provide USEFUL tips that CAN be incorporated by individuals in their everyday life.
     Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
-    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+    Your response should strictly be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the VALID JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [title of the tip]
     details - [2 sentence explaining how this particular tip will can help reduce wastage],
@@ -224,8 +224,8 @@ export const sustainableShoppingPrompt: any = `
     Perform a web search and pull the lastest data based on location preferences defined above. 
     Give me top 5 results only. Donot include anything additional in your response. 
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    Your response should strictly be in JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
-    Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
+    Your response should strictly be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
+    Your response should only include the VALID JSON result and nothing else. DONOT include the word "json" in the response.
 
     title - [Name of the Business]
     details - [2-3 sentences explaining about the businesses unique selling point, sustainable products],
