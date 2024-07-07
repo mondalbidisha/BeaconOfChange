@@ -8,7 +8,7 @@ export default function Blog() {
   const id  = pathname.split("/")[2];
   
   return (
-    <main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+    <main className="min-h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
       <BlogPost id={id}/>
     </main>
   );

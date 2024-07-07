@@ -20,13 +20,16 @@ function Landing() {
 				</div>
 				<MagicCardsContainer data={getInvolvedFacts}/>
 				<p className="flex items-center text-justify mt-10 mb-5 flex-col text-slate-100 gap-2 text-xl px-10">
-					What happens when millions of people act together for our common future? A LOT!
+					What happens when millions of people act together for our common future? 
 				</p>
-				<div className="flex items-center text-justify flex-col text-slate-100 gap-2 text-xl px-10">
+				<p className="flex items-center text-justify my-5 flex-col text-slate-100 gap-2 text-3xl px-10">
+					A LOT !!! 
+				</p>
+				{/* <div className="flex items-center text-justify flex-col text-slate-100 gap-2 text-xl px-10">
 					Living sustainably also has the potential to improve health and well-being for all.
-				</div>
+				</div> */}
 				<div className="flex items-center mt-10 mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase opacity-90 tracking-[4px]">
-					Here’s where every one of us can make a difference
+					Here’s where each one of us can make a difference
 				</div>
 				<InvolvementCards />
 			</div>

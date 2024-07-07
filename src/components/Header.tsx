@@ -19,10 +19,10 @@ function Header() {
               layout
               key={index}
               className={` ${
-                active == index && " border-b-2 border-b-yellow-500"
+                active == index && "border-b-2 border-b-yellow-500"
               } inline-block cursor-pointer  border-b-yellow-500 transition duration-300 ease-in-out hover:border-b-2 hover:text-white`}
             >
-              <Link href={menu.url}>{menu.name}</Link>
+              <Link href={menu.url} target={menu.newTab ? "_blank" : "_self"}>{menu.name}</Link>
             </motion.li>
           );
         })}
@@ -56,6 +56,7 @@ const menus = [
   },
   {
     name: "Join",
-    url: "/join"
+    url: "http://localhost:4173",
+    newTab: true
   },
 ];

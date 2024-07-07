@@ -28,7 +28,7 @@ const BlogCard = ({ title, content, publishedDate, id, fullWidth }: BlogCardProp
           </div>
         </div>
         <div className="order-1 md:order-none text-2xl font-bold pt-4 text-white text-wrap">{title}</div>
-        <div className="order-2 md:order-none tracking-wide py-4 text-slate-200">
+        <div className="order-2 md:order-none tracking-wide py-4 text-slate-200 blog-preview">
           <ReactQuill value={quillContent} readOnly={true} theme={'bubble'} />
         </div>
       </div>

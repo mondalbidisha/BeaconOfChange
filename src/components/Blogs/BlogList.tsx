@@ -31,12 +31,12 @@ function BlogList() {
 
   return (
 		<>
-			<main className="min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
+			<div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
 				<Meteors number={40}/>
 				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px]">
 					Beacon of Change - Blog
 				</div>
-        <div className="h-full flex flex-col justify-center items-center scroll-smooth py-10 overflow-x-hidden">
+        <div className="flex flex-col justify-center items-center scroll-smooth py-10 overflow-x-hidden">
             {blogs.length > 0 &&
               blogs.map((blog) => (
                   <BlogCard
@@ -66,7 +66,7 @@ function BlogList() {
             />
         )}
         <ScrollToTopButton />
-			</main>
+			</div>
 		</>
   );
 }

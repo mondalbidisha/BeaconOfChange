@@ -11,7 +11,7 @@ function MagicCardsContainer(data: any) {
 
   return (
         <div className="flex items-center text-justify flex-col text-slate-100 gap-2 px-10">
-            <MagicContainer className={"flex h-[500px] w-full flex-col gap-4 lg:h-[250px] lg:flex-row"}>
+            <MagicContainer className={"flex w-full flex-col gap-4 h-[200px] lg:flex-row"}>
                 {cardsData.map((value: any, idx: any) => (
                     <MagicCard
                         key={idx}
