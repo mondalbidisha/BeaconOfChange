@@ -18,34 +18,12 @@
   }
 }
 
-/* ::-webkit-scrollbar {
-  width: 14px;
-} */
-
-/* ::-webkit-scrollbar-track {
-  background: none;
-} */
-
-/* ::-webkit-scrollbar-thumb { */
-  /* background: #292d45; */
-  /* height: 80%;
-  padding-top: 10px;
-} */
-
-/* ::-webkit-scrollbar-thumb:active {
-  /* background: #3d4363; */
-/* }   */
-
-/* .content::-webkit-scrollbar {
-  display: none;
+.blog-preview > .quill > .ql-container > .ql-editor {
+  font-size: 1rem !important;
 }
 
-.content:hover::-webkit-scrollbar {
-  display: block;
-} */
-
-.folder-container {
-  position: relative;
+.full-blog-post-preview > .quill > .ql-container > .ql-editor {
+  font-size: 1.25rem !important;
 }
 
 .content:hover .line-before-folder {

@@ -15,10 +15,12 @@ export const geminiGenerate = async (message: string, prompt: string): Promise<s
 
   const chain = promptTemplate.pipe(model);
 
-    const result = await chain.invoke({
-        instruction: instruction,
-        message: message,
-    });
+  const result = await chain.invoke({
+      instruction: instruction,
+      message: message,
+  });
 
-  return result.text;
+  const responseText = await result.text;
+
+  return responseText;
 };
