@@ -8,6 +8,7 @@ import {
 } from "react-geocode";
 import ShopSustainableLayout from "@/components/ShopSustainable/ShopSustainableLayout";
 import { Loader } from "@/components/Loader";
+import AppLayout from "@/components/AppLayout";
 
 export default function Shop() {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,12 +62,18 @@ export default function Shop() {
 	}, [Object.values(userLocation).length])
 
   return (
-    <main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
-        {isLoading && Object.values(userLocation).length > 0 ? 
-			<Loader 
-				message={"Hang in there, gathering all the awesomeness..."}
-			/> : 
-			<ShopSustainableLayout location={userLocation}/>}
-    </main>
+	<AppLayout>
+		<main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+        {
+			isLoading && Object.values(userLocation).length > 0 
+			? 
+				<Loader 
+					message={"Hang in there, gathering all the awesomeness..."}
+				/> 
+			: 
+				<ShopSustainableLayout location={userLocation}/>}
+		</main>
+	</AppLayout>
+    
   );
 }

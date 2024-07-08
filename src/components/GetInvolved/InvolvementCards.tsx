@@ -15,7 +15,7 @@ function InvolvementCards() {
             <div className="flex items-center text-justify flex-col text-slate-100 gap-2 px-10 mb-10">
                 <MagicContainer className={"flex h-[500px] w-full flex-col gap-4 lg:h-[250px] lg:flex-row"}>
                     <MagicCard
-                        borderWidth={3}
+                        borderwidth={3}
                         className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
                         onClick={() => router.push('/food')}>
                         <motion.img
@@ -28,7 +28,7 @@ function InvolvementCards() {
                         </p>
                     </MagicCard>
                     <MagicCard 
-                        borderWidth={3}
+                        borderwidth={3}
                         className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
                         onClick={() => router.push('/water')}>
                         <motion.img
@@ -41,7 +41,7 @@ function InvolvementCards() {
                         </p>
                     </MagicCard>
                     <MagicCard 
-                        borderWidth={3}
+                        borderwidth={3}
                         className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
                         onClick={() => router.push('/fashion')}>
                         <motion.img
@@ -58,7 +58,7 @@ function InvolvementCards() {
             <div className="flex items-center text-justify flex-col text-slate-100 gap-2 px-10 mb-10">
                 <MagicContainer className={"flex h-[500px] w-full flex-col gap-4 lg:h-[250px] lg:flex-row"}>
                     <MagicCard 
-                        borderWidth={3}
+                        borderwidth={3}
                         className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
                         onClick={() => router.push('/home-energy')}>
                         <motion.img
@@ -71,7 +71,7 @@ function InvolvementCards() {
                         </p>
                     </MagicCard>
                     <MagicCard
-                        borderWidth={3}
+                        borderwidth={3}
                         className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
                         onClick={() => router.push('/transport')}>
                         <motion.img
@@ -84,7 +84,7 @@ function InvolvementCards() {
                         </p>
                     </MagicCard>
                     <MagicCard 
-                        borderWidth={3}
+                        borderwidth={3}
                         className="flex w-full cursor-pointer flex-col items-center justify-center overflow-hidden p-10 shadow-2xl hover:outline outline-2 outline-offset-2 outline-slate-100"
                         onClick={() => router.push('/waste')}>
                         <motion.img

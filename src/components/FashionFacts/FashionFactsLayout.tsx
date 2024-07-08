@@ -14,20 +14,21 @@ export default function FashionFactsLayout() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
-		const message = `generate 1-2 sentence relevant sustainable fashion choices to help combat climate change. Perform web search to fetch latest and most accurate data.`
-		geminiGenerate(message, sustainableFashionPrompt).then((response: any) => {
-            try {
-                let responseData: any = response?.replaceAll("\n", "");
-                responseData = responseData?.replaceAll("```json", "");
-                setData(JSON.parse(responseData));
-            } catch(err) {
-                console.log(JSON.stringify(err))
-            }
-		})
+		const message = `generate 1-2 sentence relevant sustainable fashion choices to help combat climate change. Perform web search to fetch latest and most accurate data.`;
+        try {
+            geminiGenerate(message, sustainableFashionPrompt).then((response: any) => {
+                const jsonString = response.replace('```json\n', '').replace('\n```', '');
+				setData(JSON.parse(jsonString));
+            }).catch((error: any) => {
+                console.log(JSON.stringify(error))
+            })
+        } catch(error: any) {
+            console.log(JSON.stringify(error))
+        }
 	}
 
 	useEffect(() => {
-		if (data.length == 10) {
+		if (data.length > 0) {
 			setIsLoading(false)
 		} else {
 			parseGeminiResponse()
@@ -67,12 +68,14 @@ export default function FashionFactsLayout() {
         </div>
         <FadeIn>
             <div className="flex items-center flex-col h-[70vh]">
-                {isLoading ? 
-                    <div className="w-full flex flex-row justify-center mt-5">
-                        <Image src={"/loader.svg"} width={150} height={150} alt="Loading..." />
-                    </div>
-                : 
-                    <NewsListLayout data={data}/>
+                {
+										isLoading 
+										? 
+											<div className="w-full flex flex-row justify-center mt-5">
+												<Image src={"/loader.svg"} width={150} height={150} alt="Loading..." />
+											</div>
+                		: 
+											<NewsListLayout data={data}/>
                 }
             </div>
         </FadeIn>

@@ -1,5 +1,4 @@
-// "use client"
-
+"use client"
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.bubble.css';
 import { Loader } from '../Loader';

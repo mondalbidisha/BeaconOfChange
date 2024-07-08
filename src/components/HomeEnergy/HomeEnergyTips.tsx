@@ -25,7 +25,7 @@ export default function HomeEnergyTips() {
 	}
 
 	useEffect(() => {
-		if (data.length == 10) {
+		if (data.length > 0) {
 			setIsLoading(false)
 		} else {
 			parseGeminiResponse()

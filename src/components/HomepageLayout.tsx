@@ -13,17 +13,18 @@ export default function HomepageLayout() {
     const [slideData, setSlideData] = useState([]);
 
     const parseGeminiResponse = () => {
-      const titles: string[] = sliderData.map((data: any) => data.title);
-        const message = `generate 4 sentences relevant to each ${titles.join(",")}, include one similar incident from around the world. Perform web search to fetch latest and most accurate the data.`
-        geminiGenerate(message, slideDataPrompt).then((response) => {
-          try {
-            let responseData: any = response?.replaceAll("\n", "");
-            responseData = responseData?.replaceAll("```json", "");
-            modifySliderData(JSON.parse(responseData));
-          } catch(err: any) {
-            console.log(JSON.stringify(err))
-          }
-        })
+        const titles: string[] = sliderData.map((data: any) => data.title);
+        const message = `generate 4 sentences relevant to each ${titles.join(",")}, include one similar incident from around the world. Perform web search to fetch latest and most accurate the data.`;
+        try {
+          geminiGenerate(message, slideDataPrompt).then((response: any) => {
+            const jsonString = response.replace('```json\n', '').replace('\n```', '');
+            modifySliderData(JSON.parse(jsonString));
+          }).catch((error: any) => {
+            console.log(JSON.stringify(error))
+          })
+        } catch(error: any) {
+          console.log(JSON.stringify(error))
+        }
     }
 
     const modifySliderData = (geminiData: any) => {

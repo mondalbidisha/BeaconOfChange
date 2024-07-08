@@ -36,7 +36,7 @@ function ShopSustainableLayout(location: any) {
 		<>
 			<div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
 				<Meteors number={40}/>
-				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px]">
+				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px] mt-20">
 					Shop Sustainably
 				</div>
 				<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">

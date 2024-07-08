@@ -1,13 +1,75 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaEarthAmericas } from "react-icons/fa6";
 import Link from "next/link";
+import { usePathname, useRouter } from 'next/navigation'
 
 function Header() {
+  const menus = [
+    {
+      tabkey: 0,
+      name: "Home",
+      url: "/"
+    },
+    {
+      tabkey: 1,
+      name: "Get Involved",
+      url: "/get-involved"
+    },
+    {
+      tabkey: 2,
+      name: "Campaign",
+      url: "/campaign"
+    },
+    {
+      tabkey: 3,
+      name: "Shop",
+      url: "/shop"
+    },
+    {
+      tabkey: 4,
+      name: "Blog",
+      url: "/blog"
+    },
+    {
+      tabkey: 5,
+      name: "Join",
+      url: "http://localhost:5173",
+      newTab: true
+    },
+  ];
+
+  const firstTab: any = menus.filter((menu: any) => menu.tabkey == 0)[0]; 
   const [active, setActive] = React.useState(0);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const tabActivation = (menu: any) => {
+    if(menu.newTab) {
+      return;
+    }
+    setActive(menu.tabkey);
+    router.push(menu.url)
+  }
+
+  const setActiveTab = () => {
+    if(pathname) {
+      const getCurrentTab = menus.filter((menu: any) => menu.url === pathname)[0];
+      setActive(getCurrentTab.tabkey)
+    } else {
+      setActive(firstTab.tabkey)
+      router.push(firstTab.url)
+    }
+  }
+
+  useEffect(() => {
+    setActiveTab()
+  }, [active])
 
   return (
-    <div className="absolute mt-5 flex w-full flex-wrap items-center justify-between gap-2 px-5 text-xs font-medium uppercase opacity-90 md:px-10">
+    <div className="absolute text-white mt-5 flex w-full flex-wrap items-center justify-between gap-2 px-5 text-xs font-medium uppercase opacity-90 md:px-10">
       <div className="flex items-center gap-2 font-medium text-2xl tracking-[4px]">
         <FaEarthAmericas className="text-4xl" />
         Beacon of Change
@@ -18,11 +80,19 @@ function Header() {
             <motion.li
               layout
               key={index}
+              onClick={() => tabActivation(menu)}
               className={` ${
-                active == index && "border-b-2 border-b-yellow-500"
-              } inline-block cursor-pointer  border-b-yellow-500 transition duration-300 ease-in-out hover:border-b-2 hover:text-white`}
+                active == menu.tabkey && "border-b-2 border-b-yellow-500"
+              } inline-block cursor-pointer border-b-yellow-500 transition duration-300 ease-in-out hover:border-b-2 hover:text-white`}
             >
-              <Link href={menu.url} target={menu.newTab ? "_blank" : "_self"}>{menu.name}</Link>
+              {
+                menu.newTab
+                ?
+                  <Link href={menu.url} target="_blank">{menu.name}</Link>
+                :
+                  <>{menu.name}</>
+              }
+              {/* <Link href={menu.url} target={menu.newTab ? "_blank" : "_self"}>{menu.name}</Link> */}
             </motion.li>
           );
         })}
@@ -32,31 +102,3 @@ function Header() {
 }
 
 export default Header;
-
-const menus = [
-  {
-    name: "Home",
-    url: "/"
-  },
-  {
-    name: "Get Involved",
-    url: "/get-involved"
-  },
-  {
-    name: "Campaign",
-    url: "/campaign"
-  },
-  {
-    name: "Shop",
-    url: "/shop"
-  },
-  {
-    name: "Blog",
-    url: "/blog"
-  },
-  {
-    name: "Join",
-    url: "http://localhost:4173",
-    newTab: true
-  },
-];
