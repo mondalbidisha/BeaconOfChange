@@ -1,17 +1,16 @@
 import React from "react";
-import HomepageLayout from "@/components/HomepageLayout";
+import Landing from "@/components/GetInvolved/Landing";
 import AppLayout from "@/components/AppLayout";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
-export default function Home() {
-
+export default function GetInvolved() {
   return (
     <ErrorBoundary>
         <AppLayout>
           <main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
-            <HomepageLayout />
+            <Landing />
           </main>
-      </AppLayout>
+        </AppLayout>
     </ErrorBoundary>
   );
 }

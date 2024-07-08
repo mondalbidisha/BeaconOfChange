@@ -7,21 +7,23 @@ import { sustainableShoppingPrompt } from "@/constants/promptTemplates";
 import { Item } from "@/constants/types";
 import Image from "next/image";
 
-function ShopSustainableLayout(location: any) {
+function ShopSustainableLayout(props: any) {
+	const { location } = props;
     const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
-		const message = `give me sustainable B2C businesses based on ${JSON.stringify(location)} location. Perform web search to fetch latest and most accurate data.`
-		geminiGenerate(message, sustainableShoppingPrompt).then((response: any) => {
-			try {
-				let responseData: any = response?.replaceAll("\n", "");
-				responseData = responseData?.replaceAll("```json", "");
-				setData(JSON.parse(responseData));
-			} catch(err: any) {
-				console.log(JSON.stringify(err))
-			}
-		})
+		const message = `give me sustainable B2C businesses based on ${JSON.stringify(location)} location. Perform web search to fetch latest and most accurate data.`;
+		try {
+			geminiGenerate(message, sustainableShoppingPrompt).then((response: any) => {
+				const jsonString = response.replace('```json\n', '').replace('\n```', '');
+				setData(JSON.parse(jsonString));
+			}).catch((error: any) => {
+				console.log(JSON.stringify(error))
+			})
+		} catch(error: any) {
+			console.log(JSON.stringify(error))
+		}
 	}
 
 	useEffect(() => {

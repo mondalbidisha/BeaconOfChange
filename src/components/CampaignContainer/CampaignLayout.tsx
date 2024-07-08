@@ -7,7 +7,8 @@ import { campaignsPrompt } from "@/constants/promptTemplates";
 import { Item } from "@/constants/types";
 import Image from "next/image";
 
-function CampaignLayout(location: any) {
+function CampaignLayout(props: any) {
+	const { location } = props;
   	const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -26,7 +27,7 @@ function CampaignLayout(location: any) {
 	}
 
 	useEffect(() => {
-		if (data.length && location) {
+		if (data.length && Object.values(location).length) {
 			setIsLoading(false)
 		} else {
 			parseGeminiResponse()

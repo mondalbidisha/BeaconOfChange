@@ -9,10 +9,15 @@ import {
 import ShopSustainableLayout from "@/components/ShopSustainable/ShopSustainableLayout";
 import { Loader } from "@/components/Loader";
 import AppLayout from "@/components/AppLayout";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 export default function Shop() {
-  const [isLoading, setIsLoading] = useState(true);
-	const [userLocation, setUserLocation] = useState({});
+  	const [isLoading, setIsLoading] = useState(true);
+	const [userLocation, setUserLocation] = useState({
+		"city": "",
+		"state": "",
+		"country": "",
+	});
 
 	const getLocationInformation = (position: any) => {
 		const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string;
@@ -37,8 +42,9 @@ export default function Shop() {
 					"city": city,
 					"state": state,
 					"country": country,
-				}
-				setUserLocation(location)
+				};
+				setUserLocation(location);
+				setIsLoading(false);
 			})
 			.catch(console.error);
 	}
@@ -48,32 +54,35 @@ export default function Shop() {
 			getLocationInformation(position)
 		}
 		const error = (err: any) => {
-			console.log(JSON.stringify(err))
+			console.log(JSON.stringify(err));
+			setIsLoading(false);
 		}
 		navigator.geolocation.getCurrentPosition(success, error);
 	}
 
 	useEffect(() => {
-		if(Object.values(userLocation).length > 0) {
-			setIsLoading(false);
-		} else {
+		if(isLoading) {
 			getBrowserCoordinates();
 		}
 	}, [Object.values(userLocation).length])
 
   return (
-	<AppLayout>
-		<main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
-        {
-			isLoading && Object.values(userLocation).length > 0 
-			? 
-				<Loader 
-					message={"Hang in there, gathering all the awesomeness..."}
-				/> 
-			: 
-				<ShopSustainableLayout location={userLocation}/>}
-		</main>
-	</AppLayout>
+	<ErrorBoundary>
+		<AppLayout>
+			<main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+			{
+				isLoading && Object.values(userLocation).length > 0 
+				? 
+					<Loader 
+						message={"Hang in there, gathering all the awesomeness..."}
+					/> 
+				: 
+					<ShopSustainableLayout location={userLocation}/>
+			}
+			</main>
+		</AppLayout>
+	</ErrorBoundary>
+	
     
   );
 }
