@@ -24,7 +24,8 @@ export const slideDataPrompt: string = `Prompt:
 
 export const newsDataPrompt: any = `
     Prompt:
-    I need trending news on climate change from all around the world. Perform a web search and pull the lastest data. Give me top 5 results only. Donot include anything additional in your response. Include citations for all your sources.
+    I need trending news on climate change from all around the world. Perform a web search and pull the lastest data. 
+    Give me top 5 results only. Donot include anything additional in your response. Include citations for all your sources.
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
     DATA SHOULD BE FROM JANUARY 2024 TO CURRENT DAY ONLY, DONOT respond with outdated information.
     Your response should be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
@@ -32,7 +33,7 @@ export const newsDataPrompt: any = `
 
     title - [news article headline],
     details - [3-4 sentences summarizing the news],
-    source - [name of news source],
+    source - [Only the name of news source],
     
     Please provide only the generated or enhanced message, without any additional explanations or suggestions.
 

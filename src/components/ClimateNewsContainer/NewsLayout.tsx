@@ -67,11 +67,11 @@ function NewsLayout() {
 							Sounds concerning right? IT IS !! Here&apos;s how you can do your bit and get involved. 
 						</div>
 						<div className="flex items-center text-center mt-10 flex-col text-slate-100 gap-2">
-							<Link href="/get-involved">
+							<Link href="/learn">
 								<ShimmerButton 
 									className="shadow-3xl">
 									<span className="whitespace-pre-wrap gap-2 p-[5px] text-center text-sm font-medium leading-none tracking-[2px] text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-										Get Involved
+										Learn More
 									</span>
 								</ShimmerButton>
 							</Link>

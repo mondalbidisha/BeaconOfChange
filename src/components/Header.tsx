@@ -15,8 +15,8 @@ function Header() {
     },
     {
       tabkey: 1,
-      name: "Get Involved",
-      url: "/get-involved"
+      name: "Learn",
+      url: "/learn"
     },
     {
       tabkey: 2,

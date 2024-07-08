@@ -1,6 +1,7 @@
 "use client"
 import AppLayout from "@/components/AppLayout";
 import CampaignLayout from "@/components/CampaignContainer/CampaignLayout";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import { Loader } from "@/components/Loader";
 import React, { useEffect, useState } from "react";
 import {
@@ -12,7 +13,11 @@ import {
 
 export default function Waste() {
 	const [isLoading, setIsLoading] = useState(true);
-	const [userLocation, setUserLocation] = useState({});
+	const [userLocation, setUserLocation] = useState({
+		"city": "",
+		"state": "",
+		"country": "",
+	});
 
 	const getLocationInformation = (position: any) => {
 		const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string;
@@ -37,8 +42,9 @@ export default function Waste() {
 					"city": city,
 					"state": state,
 					"country": country,
-				}
-				setUserLocation(location)
+				};
+				setUserLocation(location);
+				setIsLoading(false);
 			})
 			.catch(console.error);
 	}
@@ -48,33 +54,33 @@ export default function Waste() {
 			getLocationInformation(position)
 		}
 		const error = (err: any) => {
-			console.log(JSON.stringify(err))
+			console.log(JSON.stringify(err));
+			setIsLoading(false);
 		}
 		navigator.geolocation.getCurrentPosition(success, error);
 	}
 
 	useEffect(() => {
-		if(Object.values(userLocation).length > 0) {
-			setIsLoading(false);
-		} else {
+		if(isLoading) {
 			getBrowserCoordinates();
 		}
 	}, [Object.values(userLocation).length])
 
   return (
-	<AppLayout>
-		<main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
-		{
-			isLoading 
-			? 
-				<Loader 
-					message={"Hang on, putting on our superhero capes..."}
-				/> 
-			: 
-				<CampaignLayout location={userLocation}/>
-		}
-		</main>
-	</AppLayout>
-    
+	<ErrorBoundary>
+		<AppLayout>
+			<main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+			{
+				isLoading 
+				? 
+					<Loader 
+						message={"Hang on, putting on our superhero capes..."}
+					/> 
+				: 
+					<CampaignLayout location={userLocation}/>
+			}
+			</main>
+		</AppLayout>
+	</ErrorBoundary>
   );
 }
