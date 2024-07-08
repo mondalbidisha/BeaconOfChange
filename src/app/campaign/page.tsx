@@ -1,4 +1,5 @@
 "use client"
+import AppLayout from "@/components/AppLayout";
 import CampaignLayout from "@/components/CampaignContainer/CampaignLayout";
 import { Loader } from "@/components/Loader";
 import React, { useEffect, useState } from "react";
@@ -61,12 +62,19 @@ export default function Waste() {
 	}, [Object.values(userLocation).length])
 
   return (
-    <main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
-		{isLoading ? 
-			<Loader 
-				message={"Hang on, putting on our superhero capes..."}
-			/> : 
-		    <CampaignLayout location={userLocation}/>}
-    </main>
+	<AppLayout>
+		<main className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
+		{
+			isLoading 
+			? 
+				<Loader 
+					message={"Hang on, putting on our superhero capes..."}
+				/> 
+			: 
+				<CampaignLayout location={userLocation}/>
+		}
+		</main>
+	</AppLayout>
+    
   );
 }

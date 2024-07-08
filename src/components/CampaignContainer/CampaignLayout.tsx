@@ -13,15 +13,16 @@ function CampaignLayout(location: any) {
 
 	const parseGeminiResponse = () => {
 		const message = `give me climate change campaigns based on ${JSON.stringify(location)} location. Perform web search to fetch latest and most accurate data.`
-		geminiGenerate(message, campaignsPrompt).then((response: any) => {
-			try {
-				let responseData: any = response?.replaceAll("\n", "");
-				responseData = responseData?.replaceAll("```json", "");
-				setData(JSON.parse(responseData));
-			} catch(err: any) {
-				console.log(JSON.stringify(err))
-			}
-		})
+		try {
+			geminiGenerate(message, campaignsPrompt).then((response: any) => {
+				const jsonString = response.replace('```json\n', '').replace('\n```', '');
+				setData(JSON.parse(jsonString));
+			}).catch((error: any) => {
+				console.log(JSON.stringify(error))
+			})
+		} catch(error: any) {
+			console.log(JSON.stringify(error))
+		}
 	}
 
 	useEffect(() => {
@@ -36,7 +37,7 @@ function CampaignLayout(location: any) {
 		<>
 			<div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
 				<Meteors number={40}/>
-				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px]">
+				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px] mt-20">
 					Be a Beacon of Change
 				</div>
 				<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">

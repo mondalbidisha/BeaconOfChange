@@ -6,7 +6,7 @@ export const geminiGenerate = async (message: string, prompt: string): Promise<s
   Perform web search and get the latest information available.`;
 
   const model = new ChatGoogleGenerativeAI({
-    modelName: "gemini-pro",
+    modelName: "gemini-1.5-pro",
     maxOutputTokens: 2048,
     apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   });
@@ -20,7 +20,7 @@ export const geminiGenerate = async (message: string, prompt: string): Promise<s
       message: message,
   });
 
-  const responseText = await result.text;
+  const responseText = result.text;
 
   return responseText;
 };

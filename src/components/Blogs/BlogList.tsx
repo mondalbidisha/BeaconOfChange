@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useEffect, useState } from "react";
 import Meteors from "@/components/magicui/meteors";
 import { Loader } from "../Loader";
@@ -28,12 +27,22 @@ function BlogList() {
       infiniteScrollRef && observer.observe(infiniteScrollRef);
   
     }, [infiniteScrollRef, loading]);
+  
+  if(loading) {
+    return (
+      <div className="min-h-screen flex flex-col items-center overflow-y-hidden">
+        <Loader 
+          message={"Hang tight, syncing with the tech universe..."}
+        />
+      </div>
+    )
+  }
 
   return (
 		<>
 			<div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
 				<Meteors number={40}/>
-				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px]">
+				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px] mt-20">
 					Beacon of Change - Blog
 				</div>
         <div className="flex flex-col justify-center items-center scroll-smooth py-10 overflow-x-hidden">
@@ -49,14 +58,6 @@ function BlogList() {
             ))}
             {blogs.length === 0 && !loading && <div className="text-center text-3xl text-slate-300 p-24">No posts found</div>}
         </div>
-        {loading && (
-            <div className="min-h-screen flex flex-col items-center overflow-y-hidden">
-              <Loader 
-                  message={"Hang tight, syncing with the tech universe..."}
-                  hideBackground={true}
-              />
-            </div>
-        )}
         {!loading && (
             <div
             ref={(e) => {

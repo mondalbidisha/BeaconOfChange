@@ -1,4 +1,3 @@
-// import FoodFactsLayout from "@/components/FoodFacts/FoodFactsLayout";
 import React from "react";
 import FashionFactsLayout from "@/components/FashionFacts/FashionFactsLayout";
 

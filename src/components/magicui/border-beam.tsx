@@ -4,7 +4,7 @@ interface BorderBeamProps {
   className?: string;
   size?: number;
   duration?: number;
-  borderWidth?: number;
+  borderwidth?: number;
   anchor?: number;
   colorFrom?: string;
   colorTo?: string;
@@ -16,7 +16,7 @@ export const BorderBeam = ({
   size = 200,
   duration = 15,
   anchor = 90,
-  borderWidth = 3.5,
+  borderwidth = 3.5,
   colorFrom = "#ffaa40",
   colorTo = "#9c40ff",
   delay = 0,
@@ -28,7 +28,7 @@ export const BorderBeam = ({
           "--size": size,
           "--duration": duration,
           "--anchor": anchor,
-          "--border-width": borderWidth,
+          "--border-width": borderwidth,
           "--color-from": colorFrom,
           "--color-to": colorTo,
           "--delay": `-${delay}s`,
