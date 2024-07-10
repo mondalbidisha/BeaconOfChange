@@ -2,8 +2,8 @@ import { cn } from "@/lib/utils";
 import { BorderBeam } from "./magicui/border-beam";
 import { Item } from "@/constants/types";
 
-export function InfoBox({ title, details, source }: Item) {
-    
+export function InfoBox(props: any) {
+    const { title, details, source, clickHandler } = props;
     return (
       <figure
         className={cn(
@@ -15,6 +15,7 @@ export function InfoBox({ title, details, source }: Item) {
           // dark styles
           "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
         )}
+        onClick={() => clickHandler()}
       >
         <div className="flex flex-row items-center gap-3">
           <div className="flex flex-col overflow-hidden">

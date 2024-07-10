@@ -4,11 +4,18 @@ import Meteors from "../magicui/meteors";
 import { FadeIn, FadeInStagger } from "../FadeIn";
 import MagicCardsContainer from "../GetInvolved/MagicCardsContainer";
 import { homeEnergyFacts } from "@/constants/Data";
+import Link from "next/link";
+import { IoChevronBackCircleOutline } from "react-icons/io5";
 
 export default function HomeEnergyLayout() {
   return (
     <main className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10">
         <Meteors number={40}/>
+        <div className="w-10 h-10 flex items-center justify-center">
+            <Link href={'/learn'}>
+                <IoChevronBackCircleOutline className="text-4xl text-white cursor-pointer" />
+            </Link>
+        </div>
         <FadeIn>
             <div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase opacity-90 tracking-[4px]">
                 Home Energy

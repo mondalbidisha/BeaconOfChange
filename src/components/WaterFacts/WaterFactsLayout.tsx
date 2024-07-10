@@ -5,11 +5,18 @@ import { FadeIn, FadeInStagger } from "../FadeIn";
 import { UniDirectionalBeam } from "../UniDirectionalBeam";
 import { motion } from "framer-motion";
 import { StatsWithIcon } from "../StatsWithIcon";
+import Link from "next/link";
+import { IoChevronBackCircleOutline } from "react-icons/io5";
 
 export default function WaterFactsLayout() {
   return (
     <main className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10">
         <Meteors number={40}/>
+        <div className="w-10 h-10 flex items-center justify-center">
+            <Link href={'/learn'}>
+                <IoChevronBackCircleOutline className="text-4xl text-white cursor-pointer" />
+            </Link>
+        </div>
         <FadeIn>
             <div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase opacity-90 tracking-[4px]">
                 Water

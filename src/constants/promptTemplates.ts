@@ -1,4 +1,5 @@
-export const slideDataPrompt: string = `Prompt:
+export const slideDataPrompt: string = `
+    Prompt:
     You are supposed to act as a climate scientist with sufficient knowledge of global climate change and its impact all over the world.
     Your primary task is to generate content on some of the most pressing climate change issues. 
     You are supposed to generate 4 sentences only. Do not use verbose language. 
@@ -27,7 +28,7 @@ export const newsDataPrompt: any = `
     I need trending news on climate change from all around the world. Perform a web search and pull the lastest data. 
     Give me top 5 results only. Donot include anything additional in your response. Include citations for all your sources.
     YOUR CONTENT SHOULD BE ACCURATE AND FACTUAL. PERFORM A WEB SEARCH AND PULL THE LATEST DATA.
-    DATA SHOULD BE FROM JANUARY 2024 TO CURRENT DAY ONLY, DONOT respond with outdated information.
+    DONOT respond with outdated information. RETURN MOST RECENT POSSIBLE RESULTS. REFER TO CLIMATE CHANGE NEWS PUBLISHED ONLINE IN THE CURRENT YEAR ONLY.
     Your response should be in VALID JSON format. Array of JSON objects. Each JSON object should include the following key-value pairs. 
     Your response should only include the JSON result and nothing else. DONOT include the word "json" in the response.
 
@@ -189,6 +190,7 @@ export const wasteFactsPrompt: any = `
 export const campaignsPrompt: any = `
     Prompt:
     I need a list of all active and ongoing campaigns that are actively trying to combat climate change.
+    Return a list of climate change campaigns that allow individual participation only. Campaigns which allow common people to participate in some way and make a difference.
     Strictly Include results based on a users location. Results from user's current city get the highest priority, if there are no campaigns in the current city, 
     only then return results from the current state and if no campaigns are found only then return results from user's current country. 
     If no results are found for a particular country only then return results from all over the world.
@@ -218,7 +220,7 @@ export const sustainableShoppingPrompt: any = `
     Prompt:
     I need a list of all sustainable B2C businesses that are actively trying to combat climate change.
     These business should either use sustainable manufacturing processes, sustainable materials, ethical sourcing of raw materials etc.
-    Strictly Include results based on a users location. Results from user's current city get the highest priority, if there are no sustainable B2C businesses in the current city, 
+    Strictly include results based on a users location. Results from user's current city get the highest priority, if there are no sustainable B2C businesses in the current city, 
     only then return results from the current state and if no sustainable B2C businesses are found only then return results from user's current country. 
     If no results are found for a particular country only then return results from all over the world.
     DONOT return the response with numbers or bullet points.
