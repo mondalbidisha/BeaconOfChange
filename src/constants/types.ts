@@ -22,5 +22,5 @@ export type CurrentSlideData = {
 export interface Item {
 	title?: string;
 	details: string;
-	  source?: string;
+	source?: string;
   }

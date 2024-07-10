@@ -34,6 +34,12 @@ function CampaignLayout(props: any) {
 		}
 	}, [data.length, location])
 
+	const onClickHandler = (item: any) => {
+		const query = item.title + " " + item.source;
+		const url ='http://www.google.com/search?q=' + query;
+		window.open(url,'_blank');
+	}
+
   return (
 		<>
 			<div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
@@ -60,7 +66,11 @@ function CampaignLayout(props: any) {
 						data.map((item: Item, idx: any) => (
 							/* eslint-disable react/jsx-key */
 							<div className="my-5">
-								<InfoBox {...item} key={idx} />
+								<InfoBox 
+									{...item} 
+									key={idx} 
+									clickHandler={() => onClickHandler(item)}
+								/>
 							</div>
 						))
 					}

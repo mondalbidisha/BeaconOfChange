@@ -6,6 +6,8 @@ import { geminiGenerate } from "@/utils/gemini-generate";
 import { NewsListLayout } from "../ClimateNewsContainer/NewsListLayout";
 import { foodSaverPrompt } from "@/constants/promptTemplates";
 import Image from "next/image";
+import { IoChevronBackCircleOutline } from "react-icons/io5";
+import Link from "next/link";
 
 export default function FoodFactsLayout() {
     const [data, setData] = useState([]);
@@ -36,6 +38,11 @@ export default function FoodFactsLayout() {
   return (
     <main className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10">
         <Meteors number={40}/>
+        <div className="w-10 h-10 flex items-center justify-center">
+            <Link href={'/learn'}>
+                <IoChevronBackCircleOutline className="text-4xl text-white cursor-pointer" />
+            </Link>
+        </div>
         <FadeIn>
             <div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase opacity-90 tracking-[4px]">
                 Food

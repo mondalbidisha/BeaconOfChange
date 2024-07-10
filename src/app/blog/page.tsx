@@ -1,3 +1,4 @@
+"use client"
 import AppLayout from "@/components/AppLayout";
 import BlogList from "@/components/Blogs/BlogList";
 import ErrorBoundary from "@/components/ErrorBoundary";
