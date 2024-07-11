@@ -90,12 +90,6 @@ export default function WasteFactsLayout() {
 					</BentoGrid>
 				</div>
 			</FadeIn>
-			<FadeIn>
-				<div className="flex items-center text-justify my-10 flex-col text-slate-100 gap-2 text-lg px-20">
-					Where waste cannot be avoided, recycling leads to substantial resource savings. Recycling materials like paper, plastic, glass, and metals reduces the need for raw materials, conserving natural resources such as timber, water, and minerals.
-					Reducing waste helps decrease the extraction of raw materials, preserving natural habitats and biodiversity.
-				</div>
-			</FadeIn>
 	</main>
   );
 }

@@ -1,11 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import Meteors from "../magicui/meteors";
 import { FadeIn, FadeInStagger } from "../FadeIn";
-import { NewsListLayout } from "../ClimateNewsContainer/NewsListLayout";
-import { geminiGenerate } from "@/utils/gemini-generate";
-import { sustainableFashionPrompt } from "@/constants/promptTemplates";
-import Image from "next/image";
 import Link from "next/link";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 import { BentoGrid, BentoCard } from "../magicui/bento-grid";
@@ -13,31 +8,6 @@ import { motion } from "framer-motion";
 import { Fact } from "@/constants/types";
 
 export default function FashionFactsLayout() {
-	const [data, setData] = useState([]);
-	const [isLoading, setIsLoading] = useState(true);
-
-	const parseGeminiResponse = () => {
-		const message = `generate 1-2 sentence relevant sustainable fashion choices to help combat climate change. 
-										 Perform web search to fetch latest and most accurate data.`;
-			try {
-				geminiGenerate(message, sustainableFashionPrompt).then((response: any) => {
-					const jsonString = response.replace('```json\n', '').replace('\n```', '');
-					setData(JSON.parse(jsonString));
-				}).catch((error: any) => {
-					console.log(JSON.stringify(error))
-				})
-			} catch(error: any) {
-				console.log(JSON.stringify(error))
-			}
-	}
-
-	useEffect(() => {
-		if (data.length > 0) {
-			setIsLoading(false)
-		} else {
-			parseGeminiResponse()
-		}
-	}, [data.length])
 
 	const fashionFacts: Fact[] = [
 		{
@@ -117,36 +87,12 @@ export default function FashionFactsLayout() {
 				<div className="flex flex-col items-center px-20">
 					<BentoGrid>
 						{fashionFacts.map((feature: Fact, idx: number) => (
-								<BentoCard key={idx} {...feature} />
+							<BentoCard key={idx} {...feature} />
 						))}
 					</BentoGrid>
 				</div>
 			</FadeIn>
 			<FadeInStagger />
-			<FadeIn>
-				<div className="flex items-center text-justify mt-10 mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
-					Given its size and global reach, unsustainable practices within the fashion sector have important impacts on environmental development indicators.
-					Without a major change to consumption patterns in fashion, the social and environmental costs of the sector will continue to mount. 
-				</div>
-			</FadeIn>
-			<FadeIn>
-				<div className="flex items-center text-justify mt-10 mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
-					We as individuals can each do our bit to plateau the impact. Here&apos;s how each one of us can make sustainable fashion choices ...
-				</div>
-			</FadeIn>
-			<FadeIn>
-				<div className="flex items-center flex-col h-[70vh]">
-					{
-						isLoading 
-						? 
-							<div className="w-full flex flex-row justify-center mt-5">
-								<Image src={"/loader.svg"} width={150} height={150} alt="Loading..." />
-							</div>
-						: 
-							<NewsListLayout data={data}/>
-					}
-				</div>
-			</FadeIn>
     </main>
   );
 }

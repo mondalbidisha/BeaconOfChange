@@ -5,6 +5,7 @@ import { Loader } from "../Loader";
 import ScrollToTopButton from "../ScrollToTop";
 import BlogCard from "./BlogCard";
 import { useBlogs } from "@/hooks";
+import generateLoadingMessage from "@/utils/genericUtils";
 
 function BlogList() {
 
@@ -32,7 +33,7 @@ function BlogList() {
     return (
       <div className="min-h-screen flex flex-col items-center overflow-y-hidden">
         <Loader 
-          message={"Hang tight, syncing with the tech universe..."}
+          message={generateLoadingMessage()}
         />
       </div>
     )

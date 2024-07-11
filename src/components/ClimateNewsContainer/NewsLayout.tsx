@@ -8,6 +8,7 @@ import { geminiGenerate } from "@/utils/gemini-generate";
 import ShimmerButton from "../magicui/shimmer-button";
 import Link from "next/link";
 import { Loader } from "../Loader";
+import generateLoadingMessage from "@/utils/genericUtils";
 
 function NewsLayout() {
 	const [data, setData] = useState([]);
@@ -41,7 +42,7 @@ function NewsLayout() {
 				isLoading 
 				? 
 					<Loader 
-						message={"Hang on, putting on our superhero capes..."}
+						message={generateLoadingMessage()}
 					/> 
 				: 
 					<div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">
@@ -52,7 +53,7 @@ function NewsLayout() {
 							</div>
 						</FadeIn>
 						<FadeIn>
-							<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+							<div className="flex items-center text-justify mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
 								Stay updated on the impact of climate change worldwide and latest developments. Understanding the problem is the first step toward recognizing the need for necessary action for a sustainable future.
 							</div>
 						</FadeIn>

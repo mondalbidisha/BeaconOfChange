@@ -10,6 +10,7 @@ import ShopSustainableLayout from "@/components/ShopSustainable/ShopSustainableL
 import { Loader } from "@/components/Loader";
 import AppLayout from "@/components/AppLayout";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import generateLoadingMessage from "@/utils/genericUtils";
 
 export default function Shop() {
   	const [isLoading, setIsLoading] = useState(true);
@@ -74,7 +75,7 @@ export default function Shop() {
 				isLoading && Object.values(userLocation).length > 0 
 				? 
 					<Loader 
-						message={"Hang in there, gathering all the awesomeness..."}
+						message={generateLoadingMessage()}
 					/> 
 				: 
 					<ShopSustainableLayout location={userLocation}/>
