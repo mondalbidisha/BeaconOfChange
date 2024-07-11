@@ -42,7 +42,10 @@ export default function HomeEnergyTips() {
         </FadeIn>
         <FadeIn>
             <div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
-                As individuals, we can collectively do our part to make our homes more energy efficient and combat climate change.
+                As individuals we can collectively work towards reducing the environmental impact of home energy use and help combat climate change.
+            </div>
+            <div className="flex items-center text-justify mt-10 mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
+                Each one us can do our bit to plateau the impact. Here&apos;s how each one of us collectively optimise energy usage ...
             </div>
         </FadeIn>
         <FadeInStagger />

@@ -36,7 +36,7 @@ function Header() {
     {
       tabkey: 5,
       name: "Join",
-      url: "http://localhost:5173",
+      url: "https://eco-verse-nine.vercel.app",
       newTab: true
     },
   ];
@@ -92,7 +92,6 @@ function Header() {
                 :
                   <>{menu.name}</>
               }
-              {/* <Link href={menu.url} target={menu.newTab ? "_blank" : "_self"}>{menu.name}</Link> */}
             </motion.li>
           );
         })}
