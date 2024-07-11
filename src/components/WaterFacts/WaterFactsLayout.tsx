@@ -70,7 +70,7 @@ export default function WaterFactsLayout() {
         </FadeIn>
         <FadeIn>
             <div className="flex items-center text-justify mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
-                Since the 1980's, world water use has grown by 1%. World freshwater withdrawals have tripled over the last 50 years.
+                Since the 1980&apos;s, world water use has grown by 1%. World freshwater withdrawals have tripled over the last 50 years.
 								Currently over 2 billion people live in areas of high water stress. 
 								80% of diseases in developing countries are associated with water causing 3 million early deaths each year. 
             </div>

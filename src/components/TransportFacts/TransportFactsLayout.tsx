@@ -72,7 +72,7 @@ export default function TransportFactsLayout() {
         <FadeIn>
 					<div className="flex items-center text-justify mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
 						Transport is a major contributor to climate change, responsible for around 24% of global CO2 emissions from direct fuel combustion. This includes emissions from cars, trucks, ships, and airplanes.
-						Aviation alone accounts for about 2-3% of global CO2 emissions. The growth in air travel contributes significantly to this figure, with each passenger's flight releasing considerable CO2 into the atmosphere.
+						Aviation alone accounts for about 2-3% of global CO2 emissions. The growth in air travel contributes significantly to this figure, with each passenger&apos;s flight releasing considerable CO2 into the atmosphere.
 					</div>
         </FadeIn>
         <FadeInStagger />
