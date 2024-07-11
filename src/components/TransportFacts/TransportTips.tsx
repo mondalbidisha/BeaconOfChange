@@ -4,24 +4,24 @@ import Meteors from "../magicui/meteors";
 import { FadeIn, FadeInStagger } from "../FadeIn";
 import { geminiGenerate } from "@/utils/gemini-generate";
 import { NewsListLayout } from "../ClimateNewsContainer/NewsListLayout";
-import { wasteFactsPrompt } from "@/constants/promptTemplates";
+import { transportFactsPrompt } from "@/constants/promptTemplates";
 import Image from "next/image";
 
-export default function WasteReductionTips() {
+export default function TransportTips() {
 
     const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const parseGeminiResponse = () => {
-		const message = `generate 1-2 sentence relevant to sustainable waste management and recycling choices that will help combat climate change. Perform web search to fetch latest and most accurate data.`
-		geminiGenerate(message, wasteFactsPrompt).then((response: any) => {
-			try {
-					let responseData: any = response?.replaceAll("\n", "");
-					responseData = responseData?.replaceAll("```json", "");
-					setData(JSON.parse(responseData));
-			} catch(err: any) {
-					console.log(JSON.stringify(err))
-			}
+		const message = `generate 1-2 sentence relevant to sustainable transportation choice that will help combat climate change. Perform web search to fetch latest and most accurate data.`
+		geminiGenerate(message, transportFactsPrompt).then((response: any) => {
+            try {
+                let responseData: any = response?.replaceAll("\n", "");
+                responseData = responseData?.replaceAll("```json", "");
+                setData(JSON.parse(responseData));
+            } catch(err: any) {
+                console.log(JSON.stringify(err))
+            }
 		})
 	}
 
@@ -38,21 +38,21 @@ export default function WasteReductionTips() {
         <Meteors number={40}/>
         <FadeIn>
             <div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase opacity-90 tracking-[4px]">
-                Waste Reduction
+                Efficient Transportation
             </div>
         </FadeIn>
 		<FadeInStagger />
 		<FadeIn>
 			<div className="flex items-center text-justify my-10 flex-col text-slate-100 gap-2 text-lg px-20">
-				Where waste cannot be avoided, recycling leads to substantial resource savings. Recycling materials like paper, plastic, glass, and metals reduces the need for raw materials, conserving natural resources such as timber, water, and minerals.
-				Reducing waste helps decrease the extraction of raw materials, preserving natural habitats and biodiversity.
+                Implementing fuel-efficient technologies in vehicles and aircraft can significantly reduce emissions. 
+                For example, improving vehicle fuel efficiency by just 10% globally could prevent millions of tons of CO2 from entering the atmosphere annually.
 			</div>
 		</FadeIn>
 		<FadeInStagger />
         <FadeIn>
             <div className="flex items-center text-justify my-10 flex-col text-slate-100 gap-2 text-lg px-20">
-                Encouraging recycling and waste reduction promotes a circular economy, where products and materials are kept in use for as long as possible, extracting maximum value before recovery and regeneration.
-                This shift supports sustainable production and consumption patterns, reducing the environmental footprint of human activities.
+            Transitioning to alternative fuels like biofuels, hydrogen, or electric power for vehicles and aircraft can further reduce carbon emissions. 
+            These alternatives offer promising pathways to decarbonize transport and mitigate its impact on climate change.
             </div>
         </FadeIn>
 		<FadeInStagger />
@@ -64,14 +64,14 @@ export default function WasteReductionTips() {
         <FadeInStagger />
         <FadeIn>
             <div className="flex items-center flex-col h-[70vh]">
-				{isLoading ? 
-						<div className="w-full flex flex-row justify-center mt-5">
-								<Image src={"/loader.svg"} width={150} height={150} alt="Loading..." />
-						</div>
-				: 
-						<NewsListLayout data={data}/>
-				}
-			</div>
+                {isLoading ? 
+                        <div className="w-full flex flex-row justify-center mt-5">
+                                <Image src={"/loader.svg"} width={150} height={150} alt="Loading..." />
+                        </div>
+                    : 
+                        <NewsListLayout data={data}/>
+                }
+            </div>
         </FadeIn>
     </main>
   );

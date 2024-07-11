@@ -47,14 +47,14 @@ function CampaignLayout(props: any) {
 				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px] mt-20">
 					Be a Beacon of Change
 				</div>
-				<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+				<div className="flex items-center text-justify mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
 					Participating in climate change campaigns is a powerful way to make a tangible difference in the fight against global warming. It raises awareness and drives collective action, which can lead to significant policy changes and widespread adoption of sustainable practices. 
 				</div>
-				<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+				<div className="flex items-center text-justify mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
 					The benefits are profound -- we not only gain a deep sense of purpose but also get to connect with a community of like-minded advocates, and actively contribute to safeguarding the planet for future generations. 
 					Moreover, such involvement can foster personal growth, equipping us with valuable skills in advocacy, leadership, and community organizing, all while making a positive impact on the world.
 				</div>
-				<div className="flex items-center text-center mb-10 flex-col text-slate-100 font-bold gap-2 text-2xl px-10">
+				<div className="flex items-center text-justify mb-10 flex-col text-slate-100 font-bold gap-2 text-2xl px-20">
 					Be a Beacon of Change and inspire others to follow your lead !!
 				</div>
 				<div className="px-20">

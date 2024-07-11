@@ -47,21 +47,21 @@ function ShopSustainableLayout(props: any) {
 				<div className="flex items-center mb-10 flex-col text-slate-100 gap-2 text-3xl font-medium uppercase tracking-[4px] mt-20">
 					Shop Sustainably
 				</div>
-				<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+				<div className="flex items-center text-justify mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
 					Shopping sustainably can be a powerful tool to combat climate change. Sustainable businesses often reduce their carbon footprint through renewable energy, recycled materials, and efficient transport.
 					This translates to fewer greenhouse gasses being released.
 				</div>
-				<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+				<div className="flex items-center text-justify mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
 					As a customer, there are profound benefits to choosing sustainable businesses.  
 					Shopping sustainably offers a sense of well-being and personal satisfcation about aligning your values with your purchases. 
 					Sustainable practices can often lead to higher quality, more durable products. 
 					Many sustainable businesses are transparent about their practices, fostering trust and allowing you to make informed choices.
 					Next time you think about buying something, however big or small consider purchasing from sustainable businesses !! 
 				</div>
-				<div className="flex items-center text-center mb-10 flex-col text-slate-100 gap-2 text-lg px-10">
+				<div className="flex items-center text-justify mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
 					Next time you think about buying something, however big or small consider purchasing from sustainable businesses !! 
 				</div>
-				<div className="flex items-center text-center mb-10 flex-col text-slate-100 font-bold gap-2 text-2xl px-10">
+				<div className="flex items-center text-justify mb-10 flex-col text-slate-100 font-bold gap-2 text-2xl px-20">
 					Even small shifts in your shopping habits can contribute to a positive environmental impact. 
 				</div>
 				<div className="px-20">

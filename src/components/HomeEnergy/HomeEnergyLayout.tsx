@@ -100,16 +100,6 @@ export default function HomeEnergyLayout() {
 							</BentoGrid>
 						</div>
         </FadeIn>
-        <FadeInStagger />
-        <FadeIn>
-					<div className="flex items-center text-justify mt-10 mb-5 flex-col text-slate-100 gap-2 text-lg px-20">
-						Globally, residential and commercial buildings, consume over half of all electricity.
-					</div> 
-        </FadeIn>
-				<div className="flex items-center text-justify mb-10 flex-col text-slate-100 gap-2 text-lg px-20">
-					Switching to renewable energy sources for home energy use can significantly reduce the carbon footprint of residential buildings. 
-					Renewable energy sources such as solar, wind, or hydroelectric power produce less pollution and can also create new and better jobs.
-				</div>
     </main>
   );
 }
