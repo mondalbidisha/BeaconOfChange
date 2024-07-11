@@ -8,6 +8,7 @@ import { geminiGenerate } from "@/utils/gemini-generate";
 import ShimmerButton from "../magicui/shimmer-button";
 import Link from "next/link";
 import { Loader } from "../Loader";
+import generateLoadingMessage from "@/utils/genericUtils";
 
 function NewsLayout() {
 	const [data, setData] = useState([]);
@@ -41,7 +42,7 @@ function NewsLayout() {
 				isLoading 
 				? 
 					<Loader 
-						message={"Hang on, putting on our superhero capes..."}
+						message={generateLoadingMessage()}
 					/> 
 				: 
 					<div className="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800 px-20 pb-20 pt-10 scroll-smooth">

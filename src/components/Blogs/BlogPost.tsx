@@ -4,6 +4,7 @@ import 'react-quill/dist/quill.bubble.css';
 import { Loader } from '../Loader';
 import Meteors from '../magicui/meteors';
 import { useBlog } from '@/hooks';
+import generateLoadingMessage from '@/utils/genericUtils';
 
 const BlogPost = (props: any) => {
   const { id } = props;
@@ -15,7 +16,7 @@ const BlogPost = (props: any) => {
     return (
       <div className="flex flex-col justify-center items-center p-4 md:px-10 bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-800">
         <Loader 
-            message={"Scanning for tech brilliance..."}
+            message={generateLoadingMessage()}
             hideBackground={true}
           />
       </div>

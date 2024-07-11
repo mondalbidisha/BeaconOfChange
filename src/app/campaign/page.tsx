@@ -3,6 +3,7 @@ import AppLayout from "@/components/AppLayout";
 import CampaignLayout from "@/components/CampaignContainer/CampaignLayout";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { Loader } from "@/components/Loader";
+import generateLoadingMessage from "@/utils/genericUtils";
 import React, { useEffect, useState } from "react";
 import {
   setKey,
@@ -74,7 +75,7 @@ export default function Waste() {
 				isLoading 
 				? 
 					<Loader 
-						message={"Hang on, putting on our superhero capes..."}
+						message={generateLoadingMessage()}
 					/> 
 				: 
 					<CampaignLayout location={userLocation}/>

@@ -7,6 +7,7 @@ import ParentLayout from "@/components/ClimateFactsContainer/ParentLayout";
 import { slideDataPrompt } from "@/constants/promptTemplates";
 import NewsLayout from "@/components/ClimateNewsContainer/NewsLayout";
 import { Loader } from "./Loader";
+import generateLoadingMessage from "@/utils/genericUtils";
 
 export default function HomepageLayout() {
     const [isLoading, setIsLoading] = useState(true);
@@ -55,7 +56,7 @@ export default function HomepageLayout() {
     <div className="min-h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth">
       {isLoading ?
         <Loader 
-          message={"Hang tight, unwrapping some sustainable magic..."}
+          message={generateLoadingMessage()}
         /> :
         <>
           <SliderContainer />
