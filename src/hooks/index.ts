@@ -72,6 +72,7 @@ export const useBlog = ({ id }: { id: string }) => {
     content: '',
     publishedDate: '',
     published: true,
+    blogImage: ''
   });
 
   async function fetchBlog() {
