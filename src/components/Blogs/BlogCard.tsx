@@ -3,6 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.bubble.css';
 import { formatDateString, getPlainTextFromHTML } from '@/utils/string';
 import Link from 'next/link';
+import ArticleImage from '../ArticleImage';
 
 interface BlogCardProps {
   title: string;
@@ -10,9 +11,10 @@ interface BlogCardProps {
   publishedDate: string;
   id: string;
   fullWidth?: boolean;
+  blogImage?: string;
 }
 
-const BlogCard = ({ title, content, publishedDate, id, fullWidth }: BlogCardProps) => {
+const BlogCard = ({ title, content, publishedDate, blogImage, id, fullWidth }: BlogCardProps) => {
   // split and slice combination is added so that the string doesn't get trimmed in middle of a word
   const quillContent = getPlainTextFromHTML(content).split(' ')?.slice(0, 100).join(' ') + '...';
 
@@ -31,6 +33,9 @@ const BlogCard = ({ title, content, publishedDate, id, fullWidth }: BlogCardProp
         <div className="order-2 md:order-none tracking-wide py-4 text-slate-200 blog-preview">
           <ReactQuill value={quillContent} readOnly={true} theme={'bubble'} />
         </div>
+      </div>
+      <div className="order-1 md:order-none col-span-0 md:col-span-3 md:p-4 flex justify-center items-center">
+        <ArticleImage imageProps={blogImage} />
       </div>
       <div className="order-3 md:order-none text-gray-300 md:flex col-span-full p-4">{Math.ceil(content.length / 300)} min read</div>
     </Link>

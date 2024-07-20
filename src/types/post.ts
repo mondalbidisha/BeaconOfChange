@@ -4,5 +4,6 @@ export interface Post {
     id: string;
     publishedDate: string;
     published: boolean;
+    blogImage: string;
 }
   

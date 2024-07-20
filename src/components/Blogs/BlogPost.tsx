@@ -7,6 +7,7 @@ import { useBlog } from '@/hooks';
 import generateLoadingMessage from '@/utils/genericUtils';
 import Link from 'next/link';
 import { IoChevronBackCircleOutline } from 'react-icons/io5';
+import ArticleImage from '../ArticleImage';
 
 const BlogPost = (props: any) => {
   const { id } = props;
@@ -36,6 +37,9 @@ const BlogPost = (props: any) => {
       <div className="relative min-h-screen flex flex-col justify-center items-center p-4">
         <div className="p-4 max-w-[70%]">
           <div className="text-xl md:text-5xl font-extrabold py-4 line-clamp-4 text-white">{blog?.title}</div>
+          <div className="mt-5 flex justify-center items-center">
+            <ArticleImage imageProps={blog.blogImage} isFull={true}/>
+          </div>
           <div className="py-4 text-slate-200 text-xl full-blog-post-preview">
             <ReactQuill value={blog?.content} readOnly={true} theme={'bubble'} />
           </div>

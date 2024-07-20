@@ -55,6 +55,7 @@ function BlogList() {
                       publishedDate={blog?.publishedDate}
                       title={blog.title}
                       content={blog.content}
+                      blogImage={blog.blogImage}
                   />
             ))}
             {blogs.length === 0 && !loading && <div className="text-center text-3xl text-slate-300 p-24">No posts found</div>}
