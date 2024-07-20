@@ -190,10 +190,10 @@ export const wasteFactsPrompt: any = `
 export const campaignsPrompt: any = `
     Prompt:
     I need a list of all active and ongoing campaigns that are actively trying to combat climate change.
-    Return a list of climate change campaigns that allow individual participation only. Campaigns which allow common people to participate in some way and make a difference.
+    Return a list of climate change campaigns that allow individual and community participation only. Campaigns which allow common people to participate in some way and make a difference.
     Strictly Include results based on a users location. Results from user's current city get the highest priority, if there are no campaigns in the current city, 
     only then return results from the current state and if no campaigns are found only then return results from user's current country. 
-    If no results are found for a particular country only then return results from all over the world.
+    If no results are found for a particular country only then return results from all over the world. You must return a result based on instrucions give. Always respond with a result.
     DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data based on location preferences defined above. 
     Give me top 5 results only. Donot include anything additional in your response. 
@@ -222,7 +222,7 @@ export const sustainableShoppingPrompt: any = `
     These business should either use sustainable manufacturing processes, sustainable materials, ethical sourcing of raw materials etc.
     Strictly include results based on a users location. Results from user's current city get the highest priority, if there are no sustainable B2C businesses in the current city, 
     only then return results from the current state and if no sustainable B2C businesses are found only then return results from user's current country. 
-    If no results are found for a particular country only then return results from all over the world.
+    If no results are found for a particular country only then return results from all over the world. You must return a result based on instrucions give. Always respond with a result.
     DONOT return the response with numbers or bullet points.
     Perform a web search and pull the lastest data based on location preferences defined above. 
     Give me top 5 results only. Donot include anything additional in your response. 
