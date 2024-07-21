@@ -60,7 +60,7 @@ const climateChangeFacts: Fact[] = [
   },
   {
     name: "The transition to clean energy will CREATE MILLIONS OF JOBS",
-    description: "The transition to net-zero emissions is projected to lead to an overall increase in jobs in the energy sector: about 5 million jobs in fossil fuel production could be lost by 2030, but an estimated 14 million new jobs would be created in clean energy, resulting in a net gain of 9 million jobs globally.",
+    description: "The transition to net-zero emissions is projected to lead to an overall increase in jobs in the energy sector: about 5 million jobs in fossil fuel production could be lost by 2030, but an estimated 14 million new jobs would be created in clean energy.",
     className: "col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100",
     background: (
       <motion.img 

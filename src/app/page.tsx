@@ -21,7 +21,7 @@ export default function Home() {
                   For the best experience, please visit our website on a desktop or laptop. Some features may not be fully available on mobile devices.
                 </div>
                 <div className="text-md my-10">
-                  You can also visit our mobile friendly app !!
+                  You can also visit our mobile friendly site !!
                 </div>
                 <Link href="https://eco-verse-nine.vercel.app/" target="_blank">
                   <ShimmerButton 
