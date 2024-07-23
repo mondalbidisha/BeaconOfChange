@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.bubble.css';
 import { formatDateString, getPlainTextFromHTML } from '@/utils/string';
@@ -37,7 +37,9 @@ const BlogCard = ({ title, content, publishedDate, blogImage, id, fullWidth }: B
       <div className="order-1 md:order-none col-span-0 md:col-span-3 md:p-4 flex justify-center items-center">
         <ArticleImage imageProps={blogImage} />
       </div>
-      <div className="order-3 md:order-none text-gray-300 md:flex col-span-full p-4">{Math.ceil(content.length / 300)} min read</div>
+      <div className="order-3 md:order-none text-gray-300 md:flex col-span-full p-4">
+        {Math.ceil(content.length / 300)} min read
+      </div>
     </Link>
   );
 };

@@ -1,16 +1,14 @@
-"use client"
-import AppLayout from "@/components/AppLayout";
-// import BlogList from "@/components/Blogs/BlogList";
-import ErrorBoundary from "@/components/ErrorBoundary";
-import dynamic from "next/dynamic";
-import React from "react";
+'use client';
+import AppLayout from '@/components/AppLayout';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import dynamic from 'next/dynamic';
+import React from 'react';
 
 const BlogListDynamicComponent = dynamic(() => import('@/components/Blogs/BlogList'), {
-  ssr: false
+  ssr: false,
 });
 
 export default function Blog() {
-
   return (
     <ErrorBoundary>
       <AppLayout>

@@ -43,6 +43,7 @@ export const useBlogs = () => {
 
   useEffect(() => {
     fetchBlogs();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   const blogs = useMemo(() => {
@@ -72,7 +73,7 @@ export const useBlog = ({ id }: { id: string }) => {
     content: '',
     publishedDate: '',
     published: true,
-    blogImage: ''
+    blogImage: '',
   });
 
   async function fetchBlog() {
@@ -83,6 +84,7 @@ export const useBlog = ({ id }: { id: string }) => {
 
   useEffect(() => {
     fetchBlog();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return {

@@ -2,13 +2,13 @@
 import React from 'react';
 
 interface ArticleImageProps {
-    imageProps: string | undefined;
-    isFull?: boolean | undefined;
+  imageProps: string | undefined;
+  isFull?: boolean | undefined;
 }
 
 const ArticleImage: React.FC<ArticleImageProps> = ({ imageProps, isFull }) => {
   return (
-    <object data={imageProps} type="image/jpeg" className={`w-full ${isFull ? "h-[400px]" : "h-[80%]"}`}>
+    <object data={imageProps} type="image/jpeg" className={`w-full ${isFull ? 'h-[400px]' : 'h-[80%]'}`}>
       <div className="bg-gray-50 w-[100%] animate-pulse aspect-square"></div>
     </object>
   );

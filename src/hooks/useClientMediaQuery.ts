@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useEffect, useState } from 'react';
 
 export function useClientMediaQuery(query: string): boolean | null {

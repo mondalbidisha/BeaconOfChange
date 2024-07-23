@@ -1,7 +1,7 @@
-import React from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import Progress from "./Progress";
-import { Data, CurrentSlideData } from "@/constants/types";
+import React from 'react';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import Progress from './Progress';
+import { Data, CurrentSlideData } from '@/constants/types';
 
 type Props = {
   currentSlideData: CurrentSlideData;
@@ -10,9 +10,7 @@ type Props = {
   transitionData: Data;
   handleData: React.Dispatch<React.SetStateAction<Data[]>>;
   handleTransitionData: React.Dispatch<React.SetStateAction<Data>>;
-  handleCurrentSlideData: React.Dispatch<
-    React.SetStateAction<CurrentSlideData>
-  >;
+  handleCurrentSlideData: React.Dispatch<React.SetStateAction<CurrentSlideData>>;
   initData: Data;
 };
 
@@ -27,19 +25,13 @@ function Controls({
   initData,
 }: Props) {
   const handlePrev = () => {
+    handleData((prevData) => [transitionData ? transitionData : initData, ...prevData.slice(0, prevData.length - 1)]);
 
-    handleData((prevData) => [
-      transitionData ? transitionData : initData,
-      ...prevData.slice(0, prevData.length - 1),
-    ]);
-    
     handleCurrentSlideData({
       data: transitionData ? transitionData : sliderData[0],
-      index: sliderData.findIndex(
-        (ele) => ele.img === data[data.length - 1].img
-      ),
+      index: sliderData.findIndex((ele) => ele.img === data[data.length - 1].img),
     });
-    
+
     handleTransitionData(data[data.length - 1]);
   };
 
@@ -49,13 +41,10 @@ function Controls({
       data: transitionData ? transitionData : initData,
       index: sliderData.findIndex((ele) => ele.img === data[0].img),
     });
-    
+
     handleTransitionData(data[0]);
     setTimeout(() => {
-      handleData((newData) => [
-        ...newData,
-        transitionData ? transitionData : initData,
-      ]);
+      handleData((newData) => [...newData, transitionData ? transitionData : initData]);
     }, 500);
   };
 
@@ -74,13 +63,7 @@ function Controls({
 
 export default Controls;
 
-const SliderButton = ({
-  children,
-  handleClick,
-}: {
-  children: React.ReactNode;
-  handleClick: () => void;
-}) => {
+const SliderButton = ({ children, handleClick }: { children: React.ReactNode; handleClick: () => void }) => {
   return (
     <button
       className="flex h-14 w-14 items-center justify-center rounded-full border-[1px] border-[#fdfdfd5f] transition duration-300 ease-in-out hover:bg-white hover:text-black"

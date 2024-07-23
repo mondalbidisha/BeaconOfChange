@@ -1,26 +1,26 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export type Data = {
-	img: string;
-	title: string;
-	fallback: string;
-	description?: string | null;
+  img: string;
+  title: string;
+  fallback: string;
+  description?: string | null;
 };
 
 export type Fact = {
-	name: string;
-	description: string;
-	className: string;
-	background: ReactNode | null;
+  name: string;
+  description: string;
+  className: string;
+  background: ReactNode | null;
 };
-  
+
 export type CurrentSlideData = {
-	data: Data;
-	index: number;
+  data: Data;
+  index: number;
 };
 
 export interface Item {
-	title?: string;
-	details: string;
-	source?: string;
-  }
+  title?: string;
+  details: string;
+  source?: string;
+}

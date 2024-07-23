@@ -14,7 +14,14 @@ interface ViewportOptions {
   amount?: 'some' | 'all' | number;
 }
 
-export function FadeIn({ variants, viewportProp, ...props }: React.ComponentPropsWithoutRef<typeof motion.div> & { variants?: Variants; viewportProp?: ViewportOptions }) {
+export function FadeIn({
+  variants,
+  viewportProp,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof motion.div> & {
+  variants?: Variants;
+  viewportProp?: ViewportOptions;
+}) {
   let isInStaggerGroup = useContext(FadeInStaggerContext);
 
   return (
@@ -24,14 +31,14 @@ export function FadeIn({ variants, viewportProp, ...props }: React.ComponentProp
         variants
           ? variants
           : isInStaggerGroup
-          ? {
-              hidden: { opacity: 0, y: 16 },
-              visible: { opacity: 1, y: 0 },
-            }
-          : {
-              hidden: { opacity: 0 },
-              visible: { opacity: 1 },
-            }
+            ? {
+                hidden: { opacity: 0, y: 16 },
+                visible: { opacity: 1, y: 0 },
+              }
+            : {
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }
       }
       transition={{ duration: 0.5 }}
       {...(isInStaggerGroup
@@ -48,7 +55,14 @@ export function FadeIn({ variants, viewportProp, ...props }: React.ComponentProp
   );
 }
 
-export function FadeInStagger({ faster = false, once = false, ...props }: React.ComponentPropsWithoutRef<typeof motion.div> & { faster?: boolean; once?: boolean }) {
+export function FadeInStagger({
+  faster = false,
+  once = false,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof motion.div> & {
+  faster?: boolean;
+  once?: boolean;
+}) {
   return (
     <FadeInStaggerContext.Provider value={true}>
       <motion.div
@@ -68,6 +82,17 @@ export function FadeInStagger({ faster = false, once = false, ...props }: React.
   );
 }
 
-export function Stagger({ faster = false, ...props }: React.ComponentPropsWithoutRef<typeof motion.div> & { faster?: boolean }) {
-  return <motion.div initial="hidden" whileInView="visible" viewport={viewport} transition={{ staggerChildren: faster ? 0.2 : 0.4 }} {...props} />;
+export function Stagger({
+  faster = false,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof motion.div> & { faster?: boolean }) {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+      transition={{ staggerChildren: faster ? 0.2 : 0.4 }}
+      {...props}
+    />
+  );
 }
