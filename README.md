@@ -29,7 +29,7 @@ Ensure you have the following installed:
 
 Clone the repository:
 ```bash
-git@github.com:mondalbidisha/BeaconOfChange.git
+git clone git@github.com:mondalbidisha/BeaconOfChange.git
 cd BeaconOfChange
 ```
 
