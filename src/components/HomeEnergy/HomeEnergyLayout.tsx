@@ -17,7 +17,7 @@ export default function HomeEnergyLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="major emissions source image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/power-plant.jpg'}
         />
@@ -30,7 +30,7 @@ export default function HomeEnergyLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="transitioning home heating image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/thermal-plant.jpg'}
         />
@@ -43,7 +43,7 @@ export default function HomeEnergyLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="melting icebergs to denote rising temperatures image"
+          alt="growing cooling demand image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/air-conditioner.jpg'}
         />
@@ -56,7 +56,7 @@ export default function HomeEnergyLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="threat to life because of climate change temperatures image"
+          alt="benefits of renewable energy image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/windmill-energy.jpg'}
         />

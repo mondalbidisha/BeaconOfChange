@@ -19,7 +19,7 @@ export default function FoodFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="global food system impact image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/food-waste.jpg'}
         />
@@ -32,7 +32,7 @@ export default function FoodFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="food waste image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/plant-based-food.jpg'}
         />
@@ -45,7 +45,7 @@ export default function FoodFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="melting icebergs to denote rising temperatures image"
+          alt="benefits of plant-based diets image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/veg-food.jpg'}
         />
@@ -58,7 +58,7 @@ export default function FoodFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="threat to life because of climate change temperatures image"
+          alt="environmental impact of meat and dairy image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/meat-and-dairy.jpg'}
         />

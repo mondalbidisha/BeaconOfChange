@@ -16,7 +16,7 @@ export default function TransportFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="transport sector's carbon impact image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/transport-sector.jpg'}
         />
@@ -29,7 +29,7 @@ export default function TransportFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="global impact of fossil fuels image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/fossil-fuel-burn.jpg'}
         />
@@ -42,7 +42,7 @@ export default function TransportFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="melting icebergs to denote rising temperatures image"
+          alt="transition to electric vehicles image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/electric-vehicle.jpg'}
         />
@@ -55,7 +55,7 @@ export default function TransportFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="threat to life because of climate change temperatures image"
+          alt="alternative transportation options image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/cycling.jpg'}
         />

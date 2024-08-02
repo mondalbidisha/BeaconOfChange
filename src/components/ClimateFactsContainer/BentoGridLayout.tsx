@@ -10,7 +10,7 @@ const climateChangeFacts: Fact[] = [
     className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
     background: (
       <motion.img
-        alt="humans are responsible for climate change image"
+        alt="climate change is happening image"
         className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
         src={'/climate-change-is-happening.jpeg'}
       />

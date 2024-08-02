@@ -17,7 +17,7 @@ export default function WaterFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="limited freshwater resources image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/fresh-water.jpg'}
         />
@@ -30,7 +30,7 @@ export default function WaterFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="agricultural water use image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/irrigation.jpg'}
         />
@@ -43,7 +43,7 @@ export default function WaterFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="melting icebergs to denote rising temperatures image"
+          alt="human impact on water image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/water-pollution.jpg'}
         />
@@ -56,7 +56,7 @@ export default function WaterFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="threat to life because of climate change temperatures image"
+          alt="water conservation options image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/water-conservation.jpg'}
         />

@@ -17,7 +17,7 @@ export default function WasteFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="global waste and recycling image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/global-waste-recycle.jpg'}
         />
@@ -30,7 +30,7 @@ export default function WasteFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="employment and recycling image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/recycle-waste.jpg'}
         />
@@ -43,7 +43,7 @@ export default function WasteFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="melting icebergs to denote rising temperatures image"
+          alt="plastic waste reduction image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/plastic-waste-reduction.jpg'}
         />
@@ -56,7 +56,7 @@ export default function WasteFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="threat to life because of climate change temperatures image"
+          alt="e-waste growth and recycling image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/waste.jpeg'}
         />

@@ -16,7 +16,7 @@ export default function FashionFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="textile waste image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/landfill.jpg'}
         />
@@ -29,7 +29,7 @@ export default function FashionFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="humans are responsible for climate change image"
+          alt="fashion and waste reduction image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/thrifting.jpg'}
         />
@@ -42,7 +42,7 @@ export default function FashionFactsLayout() {
       className: 'col-span-3 lg:col-span-2 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="melting icebergs to denote rising temperatures image"
+          alt="environmental impact of fashion image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/fashion-impact.jpg'}
         />
@@ -55,7 +55,7 @@ export default function FashionFactsLayout() {
       className: 'col-span-3 lg:col-span-1 hover:outline outline-2 outline-offset-2 outline-slate-100',
       background: (
         <motion.img
-          alt="threat to life because of climate change temperatures image"
+          alt="water consumption image"
           className="absolute left-0 top-0 h-full w-full object-cover brightness-40"
           src={'/water-waste.jpg'}
         />
